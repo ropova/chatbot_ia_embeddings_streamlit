@@ -7,9 +7,10 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
 import numpy as np
 import random
+import re
+import unicodedata
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
-import re
 
 def load_css():
     with open("static/styles.css", "r") as f:
@@ -22,7 +23,7 @@ nltk.download('wordnet')
 
 # Cargar el modelo y otros datos necesarios
 model = load_model('chatbot_model.h5')
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])  # Compilar el modelo para inicializar las métricas
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 with open('tokenizer.json', 'r') as f:
     tokenizer_data = json.load(f)
@@ -47,11 +48,36 @@ lemmatizer = WordNetLemmatizer()
 with open('data.json', encoding='utf-8') as f:
     intents = json.load(f)
 
+# Listas adicionales de respuestas y palabras
+palabras_bien = ["bien", "super", "lo maximo", "excelente", "bendecido", "genial", "fantastico", "maravilloso", "increible", "estupendo", "fenomenal"]
+palabras_mal = ["mal", "regular", "no me siento bien", "no estoy bien", "desanimado", "decaido", "apagado", "mas o menos", "bajo de nota", "triste", "abatido", "preocupado", "desalentado", "cansado", "agobiado"]
+
+respuestas_saludo = ["Hola, ¿cómo estás?", "¡Hola! ¿Cómo te va?", "Saludos, ¿cómo te encuentras?", "Hola, ¿cómo has estado?", "¿Qué tal estás hoy?", "¿Cómo te sientes?", "Hola, ¿cómo va todo?", "¿Cómo te encuentras?", "¿Cómo va tu día?", "Hola, ¿cómo te sientes hoy?", "¿Cómo andas?"]
+
+respuestas_bien = ["Me alegra escuchar eso. ¿En qué puedo ayudarte?", "¡Genial! ¿Cómo puedo asistirte?", "¡Qué bueno! ¿En qué te puedo ayudar?", "Eso suena fantástico. ¿Hay algo específico en lo que pueda colaborar?", "Qué bueno saberlo. ¿Necesitas algún tipo de ayuda o apoyo adicional?", "Me alegra escuchar eso. ¿Hay algo en lo que pueda contribuir para que tu día sea aún mejor?", "Maravilloso. ¿Hay algo en lo que necesites ayuda o asistencia?", "Me alegra mucho escuchar eso. ¿Cómo puedo ayudarte hoy?", "Excelente. ¿Hay algo en lo que necesites que te ayude o apoye?", "Me alegra saberlo. ¿En qué puedo colaborar para que sigas sintiéndote así de bien?"]
+
+respuestas_mal = ["Lamento escuchar eso. ¿En qué puedo ayudarte?", 
+                "Lo siento, ¿cómo puedo asistirte?", 
+                "Qué pena, ¿en qué te puedo ayudar?",
+                "Oh, eso no suena bien. ¿Puedo hacer algo por ti?",
+                "Me entristece escuchar eso. ¿Hay algo en lo que pueda colaborar?",
+                "Lo siento mucho. ¿Hay algo que pueda hacer para ayudar?",
+                "Qué lástima. ¿Hay algo en lo que pueda ser de ayuda?",
+                "Vaya, eso no suena nada bien. ¿Necesitas algún tipo de apoyo?",
+                "Oh, lo siento mucho. ¿Hay algo que pueda hacer para hacerte sentir mejor?",
+                "Lo siento mucho por eso. ¿Puedo hacer algo para ayudar a mejorar tu día?",
+                "Qué pena escuchar eso. ¿Cómo puedo brindarte apoyo en este momento?"]
+
 # Función para normalizar texto eliminando puntuación y espacios innecesarios
 def normalize_text(text):
-    text = re.sub(r'\s+', ' ', text)  # Eliminar espacios múltiples
-    text = re.sub(r'[^\w\s]', '', text)  # Eliminar puntuación
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'[^\w\s]', '', text)
     return text.strip().lower()
+
+def remove_accents_and_symbols(text):
+    text = unicodedata.normalize('NFD', text)
+    text = text.encode('ascii', 'ignore').decode('utf-8')
+    return text
 
 # Función para tokenizar y lematizar texto utilizando NLTK
 def tokenize_and_lemmatize(text):
@@ -59,8 +85,6 @@ def tokenize_and_lemmatize(text):
     tokens = word_tokenize(text)
     lemmatized_tokens = [lemmatizer.lemmatize(token) for token in tokens if token.isalpha()]
     return ' '.join(lemmatized_tokens)
-
-import numpy as np
 
 # Función para detectar la intención del usuario utilizando la red neuronal
 def intent_detection(user_input):
@@ -75,32 +99,26 @@ def intent_detection(user_input):
 
 # Función para responder al usuario según la intención detectada
 def respond_to_user(user_input, intents):
-    # Verificar si el usuario envió un saludo
-    saludos = ["hola", "hello", "saludos", "qué tal", "buenos días", "buenas tardes", "buenas noches"]
-    if any(saludo in user_input.lower() for saludo in saludos):
-        st.session_state["estado"] = "pregunta_como_estas"
-        return "Hola, ¿cómo estás?", "saludo", 1.0  # Responder al saludo
+    user_input_lower = user_input.lower()
+    user_input_clean = remove_accents_and_symbols(user_input_lower)
 
-    # Verificar si el usuario responde "sí"
-    if "sí" in user_input.lower() or "si" in user_input.lower():
-        return "¿En qué puedo ayudarte?", "si", 1.0
+    # Manejar el saludo inicial
+    if "hola" in user_input_clean:
+        return random.choice(respuestas_saludo), "saludo", 1.0
 
-    # Verificar si el usuario responde "no"
-    if "no" in user_input.lower():
-        return "Espero verte pronto", "no", 1.0
+    # Verificar si el usuario respondió "sí" o "no"
+    if user_input_clean == "si":
+        return "¿En qué puedo ayudarte?", "respuesta_si", 1.0
+    elif user_input_clean == "no":
+        return "Espero verte pronto.", "respuesta_no", 1.0
 
-    # Verificar el estado para continuar el flujo
-    if st.session_state.get("estado") == "pregunta_como_estas":
-        if "bien" in user_input.lower():
-            st.session_state["estado"] = "interaccion_normal"
-            return "Me alegra escuchar eso. ¿En qué puedo ayudarte?", "bien", 1.0
-        elif "mal" in user_input.lower() or "no bien" in user_input.lower() or "no estoy bien" in user_input.lower():
-            st.session_state["estado"] = "interaccion_normal"
-            return "Lamento escuchar eso. ¿En qué puedo ayudarte?", "mal", 1.0
+    # Procesar la entrada del usuario como de costumbre
+    if any(palabra in user_input_clean for palabra in palabras_bien) and not any(neg_word in user_input_clean for neg_word in palabras_mal):
+        return random.choice(respuestas_bien), "bien", 1.0
+    elif any(neg_word in user_input_clean for neg_word in palabras_mal):
+        return random.choice(respuestas_mal), "mal", 1.0
 
-    
     # Detectar la intención normalmente si no es un saludo
-    st.session_state["estado"] = "interaccion_normal"
     intent, score = intent_detection(user_input)
     print(f"Detected intent: {intent} with score: {score}")  # Imprimir las intenciones y puntajes en la consola
     threshold = 0.9  # Umbral para la confianza en la intención
