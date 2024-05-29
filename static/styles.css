@@ -45,10 +45,17 @@
 .st-emotion-cache-4oy321{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  /*border-style: solid;
-  border-width: 1px;*/
-  background-color: #effeff73;
+  border-style: solid;
+  border-width: 0.2px;
+  border-color: #e8e8e8;
+  background-color: #ffffff;
   
+}
+
+.st-emotion-cache-1c7y2kd{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 }
 
 .st-emotion-cache-1c7y2kd{
