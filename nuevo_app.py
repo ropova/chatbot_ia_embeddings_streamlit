@@ -11,6 +11,7 @@ import re
 import unicodedata
 import streamlit as st
 from sklearn.preprocessing import LabelEncoder
+import time
 
 def load_css():
     with open("static/styles.css", "r") as f:
@@ -106,10 +107,10 @@ def respond_to_user(user_input, intents):
     if "hola" in user_input_clean:
         return random.choice(respuestas_saludo), "saludo", 1.0
 
-    # Verificar si el usuario respondió "sí" o "no"
-    if user_input_clean == "si":
+    # Verificar si el usuario respondió "sí" o "no" en una frase
+    if "si" in user_input_clean or "sí" in user_input_clean:
         return "¿En qué puedo ayudarte?", "respuesta_si", 1.0
-    elif user_input_clean == "no":
+    elif "no" in user_input_clean or "no muy bien" in user_input_clean:
         return "Espero verte pronto.", "respuesta_no", 1.0
 
     # Procesar la entrada del usuario como de costumbre
@@ -129,6 +130,34 @@ def respond_to_user(user_input, intents):
             responses = intent_obj['responses']
             return random.choice(responses), intent, score
     return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
+
+
+    # Procesar la entrada del usuario como de costumbre
+    if any(palabra in user_input_clean for palabra in palabras_bien) and not any(neg_word in user_input_clean for neg_word in palabras_mal):
+        return random.choice(respuestas_bien), "bien", 1.0
+    elif any(neg_word in user_input_clean for neg_word in palabras_mal) or "no muy bien" in user_input_clean:
+        return random.choice(respuestas_mal), "mal", 1.0
+
+    # Detectar la intención normalmente si no es un saludo
+    intent, score = intent_detection(user_input)
+    print(f"Detected intent: {intent} with score: {score}")  # Imprimir las intenciones y puntajes en la consola
+    threshold = 0.9  # Umbral para la confianza en la intención
+    if score < threshold:
+        return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
+    for intent_obj in intents['intents']:
+        if intent_obj['tag'] == intent:
+            responses = intent_obj['responses']
+            return random.choice(responses), intent, score
+    return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
+
+def display_text_word_by_word(text):
+    message_placeholder = st.empty()
+    words = text.split()
+    full_text = ""
+    for word in words:
+        full_text += word + " "
+        message_placeholder.markdown(full_text)
+        time.sleep(random.uniform(0.08, 0.2))  # Generar una pausa aleatoria entre 0.2 y 0.5 segundos por palabra
 
 load_css()
 
@@ -157,7 +186,7 @@ if prompt := st.chat_input("Escribe aquí..."):
     response, intent, score = respond_to_user(prompt, intents)
 
     with st.chat_message("assistant", avatar="static/images/chatbot.png"):
-        st.markdown(response)
+       display_text_word_by_word(response)
     st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
 
 # Botón de limpiar
