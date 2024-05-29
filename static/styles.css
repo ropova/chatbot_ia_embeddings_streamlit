@@ -28,15 +28,30 @@
   padding-top: 5px;
 }
 
-.st-emotion-cache-p4micv{
-  width: 3rem;
-  height: 3rem;
+.st-emotion-cache-p4micv{/*Tamaño Iconos Conversación*/
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .st-emotion-cache-vdokb0 p{
-  font-size: 1.3rem;
+  font-size: 1.1rem;/*Tamaño Fuente Conversaciones*/
+  color: rgb(0, 0, 0);
 }
 
 .st-emotion-cache-zt5igj{
-  font-size: 35px;
+  font-size: 35px;/*Tamaño Fuente Título Chatbot*/
+}
+
+.st-emotion-cache-4oy321{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  /*border-style: solid;
+  border-width: 1px;*/
+  background-color: #effeff73;
+  
+}
+
+.st-emotion-cache-1c7y2kd{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
