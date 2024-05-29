@@ -99,56 +99,60 @@ def intent_detection(user_input):
     return response, score
 
 # Función para responder al usuario según la intención detectada
+
 def respond_to_user(user_input, intents):
+    # Imprimir la entrada del usuario en la consola
+    print(f"User input: {user_input}")
+
     user_input_lower = user_input.lower()
     user_input_clean = remove_accents_and_symbols(user_input_lower)
 
-    # Manejar el saludo inicial
+    # Procesar la entrada del usuario como de costumbre
     if "hola" in user_input_clean:
-        return random.choice(respuestas_saludo), "saludo", 1.0
+        print("Detected salutation.")
+        response = random.choice(respuestas_saludo)
+        print(f"Response: {response}")
+        return response, "saludo", 1.0
 
-    # Verificar si el usuario respondió "sí" o "no" en una frase
-    if "si" in user_input_clean or "sí" in user_input_clean:
-        return "¿En qué puedo ayudarte?", "respuesta_si", 1.0
-    elif "no" in user_input_clean or "no muy bien" in user_input_clean:
-        return "Espero verte pronto.", "respuesta_no", 1.0
+    # Buscar la palabra "no" como una palabra independiente
+    if "no" == user_input_clean.strip():
+        print("Detected negative response.")
+        response = "Espero verte pronto."
+        print(f"Response: {response}")
+        return response, "respuesta_no", 1.0
 
-    # Procesar la entrada del usuario como de costumbre
-    if any(palabra in user_input_clean for palabra in palabras_bien) and not any(neg_word in user_input_clean for neg_word in palabras_mal):
-        return random.choice(respuestas_bien), "bien", 1.0
-    elif any(neg_word in user_input_clean for neg_word in palabras_mal):
-        return random.choice(respuestas_mal), "mal", 1.0
+    # Buscar la palabra "si" como una palabra independiente
+    if "si" == user_input_clean.strip() or "sí" == user_input_clean.strip():
+        print("Detected affirmative response.")
+        response = "¿En qué puedo ayudarte?"
+        print(f"Response: {response}")
+        return response, "respuesta_si", 1.0
 
-    # Detectar la intención normalmente si no es un saludo
+    # Procesar palabras clave de estado emocional
+    if any(palabra in user_input_clean for palabra in palabras_bien):
+        print("Positive emotional state keywords detected.")
+        response = random.choice(respuestas_bien)
+        print(f"Response: {response}")
+        return response, "bien", 1.0
+    elif any(palabra in user_input_clean for palabra in palabras_mal):
+        print("Negative emotional state keywords detected.")
+        response = random.choice(respuestas_mal)
+        print(f"Response: {response}")
+        return response, "mal", 1.0
+
+    # Detectar la intención normalmente
     intent, score = intent_detection(user_input)
     print(f"Detected intent: {intent} with score: {score}")  # Imprimir las intenciones y puntajes en la consola
     threshold = 0.9  # Umbral para la confianza en la intención
     if score < threshold:
+        print('No entiendo. ¿Puedes reformular la pregunta?')  # Imprimir en la consola si no se entiende la pregunta
         return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
     for intent_obj in intents['intents']:
         if intent_obj['tag'] == intent:
             responses = intent_obj['responses']
-            return random.choice(responses), intent, score
-    return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
-
-
-    # Procesar la entrada del usuario como de costumbre
-    if any(palabra in user_input_clean for palabra in palabras_bien) and not any(neg_word in user_input_clean for neg_word in palabras_mal):
-        return random.choice(respuestas_bien), "bien", 1.0
-    elif any(neg_word in user_input_clean for neg_word in palabras_mal) or "no muy bien" in user_input_clean:
-        return random.choice(respuestas_mal), "mal", 1.0
-
-    # Detectar la intención normalmente si no es un saludo
-    intent, score = intent_detection(user_input)
-    print(f"Detected intent: {intent} with score: {score}")  # Imprimir las intenciones y puntajes en la consola
-    threshold = 0.9  # Umbral para la confianza en la intención
-    if score < threshold:
-        return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
-    for intent_obj in intents['intents']:
-        if intent_obj['tag'] == intent:
-            responses = intent_obj['responses']
-            return random.choice(responses), intent, score
-    return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
+            response = random.choice(responses)
+            print(f"Response: {response}")
+            return response, intent, score
 
 def display_text_word_by_word(text):
     message_placeholder = st.empty()

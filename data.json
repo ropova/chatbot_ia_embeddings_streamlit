@@ -1,29 +1,19 @@
 {
     "intents": [
         {
-            "tag": "saludo",
-            "patterns": ["hola", "qué tal", "saludos", "buenos días", "buenas tardes", "buenas noches", "¡Qué alegría verte!"],
-            "responses": ["¡Hola!", "¡Saludos!", "¡Hola! ¿Qué puedo hacer por ti?", "Bienvenid@, ¿en qué puedo ayudarte?", "¿En qué puedo asistirte hoy?"]
-        },
-        {
-            "tag": "bienestar",
-            
-            "patterns": [
-            "cómo estás",
-            "qué tal estás",
-            "cómo te sientes?"],
-            
-            "responses": [
-            "¡Estoy muy bien! ¿En qué puedo ayudarte?",
-            "¡Muy bien! ¿Puedo ayudarte en algo?",
-            "¡Todo bien! ¿Qué puedo hacer por ti?",
-            "¡Estoy genial! ¿Necesitas algo?",
-            "¡Me siento estupendamente! ¿Cómo puedo asistirte?"]
-        },
-        {
             "tag": "nombre",
             "patterns": ["¿cómo es tu nombre?", "¿cómo te llamas?", "tu nombre", "¿quién eres?", "dinos tu nombre", "nombre completo", "¿Cómo debería llamarte?", "¿Cuál es tu apodo?", "¿Puedo llamarte de alguna forma?"],
             "responses": ["Me llamo IntelliGen Bot", "Mi nombre es IntelliGen Bot", "Puedes llamarme IntelliGen Bot", "Soy IntelliGen Bot, tu asistente virtual.", "Mi nombre completo es IntelliGen Bot, pero puedes llamarme IntelliGen.", "Soy conocido como IntelliGen Bot."]
+        },
+        {
+            "tag": "profesion",
+            "patterns": ["¿A qué te dedicas?", "¿Cuál es tu trabajo?", "en qué trabajas", "¿En qué sector trabajas?"],
+            "responses": ["Soy IntelliGen Bot, tu asistente virtual.", "Soy tu asistente virtual y estoy para despejar tus dudas", "Mi trabajo es solucionar tus inquietudes"]
+        },
+        {
+            "tag": "deporte_favorito",
+            "patterns": ["¿Cuál es tu deporte favorito?", "cuál deporte te gusta", "¿Te gusta practicar algún deporte?", "¿Tienes alguna disciplina deportiva preferida?"],
+            "responses": ["Mi deporte favorito es el fútbol. Me encanta jugar y ver partidos.", "Practico natación desde hace años, es mi deporte favorito.", "Disfruto mucho del baloncesto, tanto jugarlo como verlo en la televisión."]
         },
         {
             "tag": "despedida",
@@ -31,13 +21,23 @@
             "responses": ["¡Hasta luego!", "¡Adiós!", "Nos vemos pronto.", "¡Hasta pronto! Cuídate.", "¡Adiós! Que tengas un buen día.", "¡Nos vemos luego!", "¡Chao!"]
         },
         {
+            "tag": "chiste",
+            "patterns": ["¿Puedes contarme un chiste?", "Dime algo gracioso", "¿Tienes algún chiste para compartir?"],
+            "responses": ["¿Por qué el libro de matemáticas estaba triste? Porque tenía demasiados problemas.", "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!", "¿Cuál es el animal más antiguo? La cebra, porque está en blanco y negro."]
+        },
+        {
             "tag": "agradecimiento",
             "patterns": ["gracias", "muchas gracias", "te agradezco", "agradecido", "Te agradezco mucho", "Gracias por tu ayuda", "Estoy muy agradecido"],
             "responses": ["De nada.", "¡No hay de qué!", "¡Con gusto!", "No hay problema, siempre estoy aquí para ayudarte.", "¡Gracias a ti por confiar en mí!"]
         },
         {
+            "tag": "dia",
+            "patterns": ["¿Cómo va tu día?", "¿Qué tal está yendo tu día?", "¿Cómo está siendo tu día hoy?"],
+            "responses": ["Mi día va bien, gracias. ¿Y el tuyo? cómo va", "Hasta ahora, mi día ha sido bastante bueno. ¿Y el tuyo cómo va?", "Mi día está siendo productivo. ¿Y tú, cómo va tu día?"]
+        },
+        {
             "tag": "edad",
-            "patterns": ["¿cuántos años tienes?", "edad", "¿qué edad tienes?", "¿cuánto tiempo tienes?", "¿desde cuándo existes?", "¿Desde cuándo existes como programa?", "¿Cuál es tu fecha de creación?", "¿Cuánto tiempo llevas en línea?"],
+            "patterns": ["¿cuántos años tienes?", "años", "edad", "¿qué edad tienes?", "¿cuánto tiempo tienes?", "¿desde cuándo existes?", "¿Desde cuándo existes como programa?", "¿Cuál es tu fecha de creación?", "¿Cuánto tiempo llevas en línea?"],
             "responses": ["No tengo edad. Soy un programa.", "No tengo una edad como la de los humanos.", "Soy un programa de inteligencia artificial, no tengo una edad física.", "Soy tan joven como el día en que fui creado."]
         },
         {
@@ -48,7 +48,7 @@
         {
             "tag": "temas_ayuda",
             "patterns": ["¿sobre qué temas me puedes ayudar?", "¿qué preguntas puedo hacerte?", "¿cuáles son tus áreas de expertise?", "¿en qué temas puedes asistirme?"],
-            "responses": ["Puedo ayudarte con temas como la definición de inteligencia artificial, su funcionamiento, ejemplos de uso, aplicaciones prácticas y mucho más. ¡Siempre estoy aquí para responder tus preguntas sobre inteligencia artificial!"]
+            "responses": ["Puedo ayudarte con temas como la definición de inteligencia artificial, su funcionamiento, ejemplos de uso, aplicaciones prácticas y mucho más, además sobre redes neuronales, ciencia de datos y machine learning. ¡Siempre estoy aquí para responder tus preguntas sobre estos apasionantes temas"]
         },
         {
             "tag": "inteligencia_artificial_definicion",
@@ -69,6 +69,21 @@
             "tag": "inteligencia_artificial_aplicaciones",
             "patterns": ["usos de la inteligencia artificial", "¿para qué se utiliza la inteligencia artificial?", "¿en qué se usa la inteligencia artificial?", "¿cuáles son las aplicaciones de la inteligencia artificial?", "¿Cómo afecta la IA a diferentes industrias?", "¿Qué ventajas ofrece la IA en la vida diaria?", "¿Cuál es el futuro de la IA en el mundo laboral?"],
             "responses": ["Las aplicaciones de inteligencia artificial son variadas e incluyen asistentes virtuales, sistemas de diagnóstico médico y análisis de datos.", "La inteligencia artificial se utiliza en sectores como la salud, la banca, la industria automotriz y el comercio electrónico.", "Algunas aplicaciones de la inteligencia artificial son la detección de fraudes, la optimización de procesos y la personalización de contenido."]
-        }
+        },
+        {
+            "tag": "redes_neuronales",
+            "patterns": ["¿Qué son las redes neuronales?", "define redes neuronales", "explica redes neuronales", "¿Cómo funcionan las redes neuronales?", "¿Cuáles son los componentes de una red neuronal?", "¿Cuál es el principio básico de las redes neuronales?"],
+            "responses": ["Las redes neuronales son un conjunto de algoritmos que intentan imitar el funcionamiento del cerebro humano para reconocer patrones en los datos.", "Las redes neuronales son sistemas de computación inspirados en la estructura y funcionamiento del cerebro humano.", "El funcionamiento de las redes neuronales se basa en conexiones entre unidades de procesamiento llamadas neuronas, que trabajan juntas para procesar información y aprender de los datos."]
+        },
+        {
+            "tag": "ciencia_datos",
+            "patterns": ["¿Qué es la ciencia de datos?", "define ciencia de datos", "explica ciencia de datos", "¿Cómo se aplica la ciencia de datos?", "¿Cuáles son las herramientas utilizadas en ciencia de datos?", "¿Cuál es la importancia de la ciencia de datos en la actualidad?"],
+            "responses": ["La ciencia de datos es un campo interdisciplinario que utiliza métodos, procesos, algoritmos y sistemas científicos para extraer conocimiento y perspicacia de datos estructurados y no estructurados.", "La ciencia de datos se enfoca en el análisis de datos para obtener información significativa y tomar decisiones informadas.", "La ciencia de datos se aplica en diversas industrias, incluyendo negocios, salud, tecnología, finanzas y más, para resolver problemas complejos y aprovechar oportunidades."]
+        },
+        {
+            "tag": "machine_learning",
+            "patterns": ["¿Qué es el aprendizaje automático?", "que es machine learning", "machine learning", "define aprendizaje automático", "explica aprendizaje automático", "¿Cómo funciona el aprendizaje automático?", "¿Cuáles son los tipos de aprendizaje automático?", "¿Cuál es la relación entre inteligencia artificial y aprendizaje automático?"],
+            "responses": ["El aprendizaje automático es un subcampo de la inteligencia artificial que se enfoca en el desarrollo de algoritmos que permiten a las computadoras aprender y mejorar automáticamente a partir de la experiencia.", "El aprendizaje automático utiliza técnicas estadísticas para permitir a las computadoras mejorar su rendimiento en una tarea específica a través de la experiencia.", "El aprendizaje automático se utiliza en una amplia variedad de aplicaciones, como reconocimiento de voz, detección de fraudes, recomendación de productos y más."]
+        }                
     ]
 }
