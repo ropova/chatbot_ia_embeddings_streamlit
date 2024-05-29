@@ -4,7 +4,7 @@
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: rgba(240, 242, 246, 0.5);
+  background-color: rgba(39, 50, 114, 0.232);
   flex-direction: row-reverse;
   text-align: end;
 }
@@ -26,6 +26,7 @@
 
 .st-emotion-cache-10trblm{
   padding-top: 5px;
+  color:#ffffff;
 }
 
 .st-emotion-cache-p4micv{/*Tamaño Iconos Conversación*/
@@ -35,7 +36,7 @@
 
 .st-emotion-cache-vdokb0 p{
   font-size: 1.1rem;/*Tamaño Fuente Conversaciones*/
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .st-emotion-cache-zt5igj{
@@ -47,18 +48,35 @@
   padding-bottom: 0.5rem;
   border-style: solid;
   border-width: 0.2px;
-  border-color: #e8e8e8;
-  background-color: #ffffff;
+  border-color: #9c9c9c;
+  background-color: rgba(102, 102, 102, 0.148);
   
 }
 
-.st-emotion-cache-1c7y2kd{
+.st-emotion-cache-1c7y2kd{/*Color de fondo de globo conversación usuario*/
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
+  background-color: #e0dfdf34;
 }
 
-.st-emotion-cache-1c7y2kd{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.st-emotion-cache-bm2z3a{
+  background: rgba(0, 10, 75, 0.900);
+}
+
+.st-emotion-cache-uhkwx6{
+  background: rgba(0, 0, 0, 0.900);
+}
+
+.st-emotion-cache-10trblm
+
+.viewerBadge_container__1QSob {
+  display: none;
+}
+
+.stActionButton {
+  display: none;
+}
+
+.st-emotion-cache-18ni7ap{
+  display: none;
 }
