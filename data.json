@@ -6,6 +6,11 @@
             "responses": ["Me llamo IntelliGen Bot", "Mi nombre es IntelliGen Bot", "Puedes llamarme IntelliGen Bot", "Soy IntelliGen Bot, tu asistente virtual.", "Mi nombre completo es IntelliGen Bot, pero puedes llamarme IntelliGen.", "Soy conocido como IntelliGen Bot."]
         },
         {
+            "tag": "estado",
+            "patterns": ["¿Cómo estás?", "¿Cómo te va?", "¿Qué tal estás?", "¿Cómo te encuentras?", "¿Qué tal va todo?"],
+            "responses": ["Estoy bien, gracias por preguntar. ¿En qué puedo ayudarte?", "Todo va bien, ¿Cómo puedo asistirte?", "Me siento bien, ¿En qué puedo ayudarte?", "Todo en orden, ¿En qué puedo ayudarte?", "Muy bien, gracias. ¿Hay algo en lo que necesites que te ayude o apoye?"]
+        },
+        {
             "tag": "profesion",
             "patterns": ["¿A qué te dedicas?", "¿Cuál es tu trabajo?", "en qué trabajas", "¿En qué sector trabajas?"],
             "responses": ["Soy IntelliGen Bot, tu asistente virtual.", "Soy tu asistente virtual y estoy para despejar tus dudas", "Mi trabajo es solucionar tus inquietudes"]
@@ -48,7 +53,7 @@
         {
             "tag": "temas_ayuda",
             "patterns": ["¿sobre qué temas me puedes ayudar?", "¿qué preguntas puedo hacerte?", "¿cuáles son tus áreas de expertise?", "¿en qué temas puedes asistirme?"],
-            "responses": ["Puedo ayudarte con temas como la definición de inteligencia artificial, su funcionamiento, ejemplos de uso, aplicaciones prácticas y mucho más, además sobre redes neuronales, ciencia de datos y machine learning. ¡Siempre estoy aquí para responder tus preguntas sobre estos apasionantes temas"]
+            "responses": ["Puedo ayudarte con temas como la definición de inteligencia artificial, su funcionamiento, ejemplos de uso, aplicaciones prácticas y mucho más, además sobre redes neuronales, ciencia de datos y machine learning.\n ¡Siempre estoy aquí para responder tus preguntas sobre estos apasionantes temas"]
         },
         {
             "tag": "inteligencia_artificial_definicion",
