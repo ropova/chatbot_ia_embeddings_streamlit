@@ -180,7 +180,7 @@ for message in st.session_state.messages:
 if not st.session_state.messages:
     with st.chat_message("assistant", avatar="static/images/chatbot.png"):
         st.markdown("Hola, ¿cómo puedo ayudarte?")
-    st.session_state.messages.append({"role": "assistant", "content": "Hola, ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"})
+    st.session_state.messages.append({"role": "assistant", "content": "Hola, soy Magnétic Bot y esoy aquí para resolver tus inquietudes ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"})
 
 if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
     with st.chat_message("user", avatar="static/images/gente.png"):
