@@ -166,7 +166,7 @@ def display_text_word_by_word(text):
 load_css()
 
 # Interfaz de Streamlit
-st.title("IntelliGen Bot")
+#st.title("IntelliGen Bot")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
