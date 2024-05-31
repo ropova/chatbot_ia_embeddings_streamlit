@@ -84,5 +84,5 @@
 }
 
 .embeddedAppMetaInfoBar_linkOutText__4ptMa {
-  display: none;
+  display: none !important;
 }
