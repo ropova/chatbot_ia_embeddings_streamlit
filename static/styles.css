@@ -35,12 +35,13 @@
 }
 
 .st-emotion-cache-vdokb0 p{
-  font-size: 1rem;/*Tamaño Fuente Conversaciones*/
+  font-size: 1.1rem;/*Tamaño Fuente Conversaciones*/
   color: rgb(255, 255, 255);
 }
 
 .st-emotion-cache-zt5igj{
   font-size: 35px;/*Tamaño Fuente Título Chatbot*/
+  padding-top: 0px;
 }
 
 .st-emotion-cache-4oy321{
@@ -48,23 +49,23 @@
   padding-bottom: 0.5rem;
   border-style: solid;
   border-width: 0.2px;
-  border-color: #9c9c9c;
-  background-color: rgba(102, 102, 102, 0.148);
+  border-color: rgb(255, 255, 255);
+  /*background-color: rgb(16 8 30 / 49%);*/
   
 }
 
 .st-emotion-cache-1c7y2kd{/*Color de fondo de globo conversación usuario*/
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background-color: #e0dfdf34;
+  background-color: rgb(16 8 30 / 49%);
 }
 
-.st-emotion-cache-bm2z3a{
+.st-emotion-cache-bm2z3a{/*Fondo sección general arriba*/
   background: #0070BA;
 }
 
-.st-emotion-cache-uhkwx6{
-  background: rgba(0, 0, 0, 0.900);
+.st-emotion-cache-uhkwx6{/*Fondo sección de abajo*/
+  background: #1E1E20;
 }
 
 .viewerBadge_container__1QSob {
