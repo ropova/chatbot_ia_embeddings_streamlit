@@ -23,20 +23,20 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 # Cargar el modelo y otros datos necesarios
-model = load_model('chatbot_model.h5')
+model = load_model('magnetica_model.h5')
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-with open('tokenizer.json', 'r') as f:
+with open('tokenizer_mag.json', 'r') as f:
     tokenizer_data = json.load(f)
     tokenizer = Tokenizer()
     tokenizer.word_index = tokenizer_data
 
-with open('label_encoder.json', 'r') as f:
+with open('label_encoder_mag.json', 'r') as f:
     label_encoder_data = json.load(f)
     label_encoder = LabelEncoder()
     label_encoder.classes_ = np.array(label_encoder_data)
 
-with open('word_index.json', 'r') as f:
+with open('word_index_mag.json', 'r') as f:
     word_index = json.load(f)
 embedding_matrix = np.load('embedding_matrix.npy')
 
@@ -46,7 +46,7 @@ max_length = 20
 lemmatizer = WordNetLemmatizer()
 
 # Cargar intents
-with open('data.json', encoding='utf-8') as f:
+with open('data_mag.json', encoding='utf-8') as f:
     intents = json.load(f)
 
 # Listas adicionales de respuestas y palabras
@@ -157,11 +157,17 @@ def respond_to_user(user_input, intents):
 def display_text_word_by_word(text):
     message_placeholder = st.empty()
     words = text.split()
-    full_text = ""
-    for word in words:
-        full_text += word + " "
-        message_placeholder.markdown(full_text)
+    for i, word in enumerate(words):
+        if i != len(words) - 1:
+            message_placeholder.markdown(" ".join(words[:i]) + " " + word + " ▌", unsafe_allow_html=True)
+        else:
+            message_placeholder.markdown(" ".join(words[:i]) + " " + word + " ▌", unsafe_allow_html=True)  # Mostrar el marcador en la última palabra
         time.sleep(random.uniform(0.08, 0.2))  # Generar una pausa aleatoria entre 0.2 y 0.5 segundos por palabra
+
+    # Eliminar el marcador después de 1 segundo
+    time.sleep(0.1)
+    message_placeholder.markdown(" ".join(words), unsafe_allow_html=True)
+
 
 load_css()
 
@@ -175,7 +181,7 @@ if "estado" not in st.session_state:
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar=message.get("image", None)):
-        st.markdown(message["content"])
+         st.markdown(message["content"], unsafe_allow_html=True)  # Asegurar que el contenido HTML se muestre correctamente
 
 if not st.session_state.messages:
     with st.chat_message("assistant", avatar="static/images/chatbot.png"):
