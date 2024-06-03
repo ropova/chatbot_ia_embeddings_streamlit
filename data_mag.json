@@ -48,7 +48,7 @@
         {
             "tag": "temas_ayuda",
             "patterns": ["¿sobre qué temas me puedes ayudar?", "¿qué temas sabes?", "¿qué preguntas puedo hacerte?", "¿cuales temas sabes?", "¿en qué temas puedes asistirme?"],
-            "responses": ["Puedo ayudarte con temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temás técnicos sobre impresión, marketing digital, diseño y publicidad"]
+            "responses": ["Puedo ayudarte con temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temas técnicos sobre impresión, marketing digital, diseño y publicidad"]
         },
         {
             "tag": "servicios",
