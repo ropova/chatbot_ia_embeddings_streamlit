@@ -18,6 +18,19 @@ def load_css():
         css = f"<style>{f.read()}</style>"
         st.markdown(css, unsafe_allow_html=True)
 
+# Función para incluir el script de JavaScript para mantener la aplicación activa
+def load_keep_alive_script():
+    keep_alive_script = """
+    <script>
+        function keepAlive() {
+            fetch('/')
+            setTimeout(keepAlive, 600000);  // 10 minutos en milisegundos
+        }
+        keepAlive();
+    </script>
+    """
+    st.markdown(keep_alive_script, unsafe_allow_html=True)        
+
 # Descargar los recursos de NLTK necesarios
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -170,6 +183,7 @@ def display_text_word_by_word(text):
 
 
 load_css()
+load_keep_alive_script()  # Cargar el script para mantener la aplicación activa
 
 # Interfaz de Streamlit
 #st.title("IntelliGen Bot")
