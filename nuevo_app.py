@@ -13,6 +13,9 @@ import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 import time
 
+# Configurar la barra lateral para que esté cerrada por defecto
+st.set_page_config(initial_sidebar_state='collapsed')
+
 def load_css():
     with open("static/styles.css", "r") as f:
         css = f"<style>{f.read()}</style>"
@@ -193,9 +196,11 @@ def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
     st.session_state.chat_aborted = False
 
-#with st.sidebar:
-        #st.title('Magnétic Bot')
-        #st.button('Limpiar historial de chat', on_click=clear_chat_history)
+# Crea la barra lateral con el parámetro expandable
+with st.sidebar:
+    st.title('Magnétic Bot')
+    st.button('Limpiar historial de chat', on_click=clear_chat_history)
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
