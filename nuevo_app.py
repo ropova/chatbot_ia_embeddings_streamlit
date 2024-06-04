@@ -188,6 +188,15 @@ load_keep_alive_script()  # Cargar el script para mantener la aplicación activa
 # Interfaz de Streamlit
 #st.title("IntelliGen Bot")
 
+# Función para limpiar la conversación
+def clear_chat_history():
+    st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
+    st.session_state.chat_aborted = False
+
+with st.sidebar:
+        st.title('Magnétic Bot')
+        st.button('Limpiar historial de chat', on_click=clear_chat_history)
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "estado" not in st.session_state:
@@ -214,14 +223,7 @@ if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
     with st.chat_message("assistant", avatar="static/images/chatbot.png"):
         display_text_word_by_word(response)
         st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
-
-# Función para limpiar la conversación
-def clear_chat_history():
-    st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
-    st.session_state.chat_aborted = False
-
     
 # Botón para limpiar la conversación
-if st.button('Limpiar historial de chat', on_click=clear_chat_history):
-    st.experimental_rerun()  # Recargar la página para actualizar la conversación
-
+st.button('Limpiar historial de chat', on_click=clear_chat_history, key="unique_button_key")
+   #st.experimental_rerun() 
