@@ -207,11 +207,14 @@ if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
         st.markdown(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt, "image": "static/images/gente.png"})     
 
-    response, intent, score = respond_to_user(prompt, intents)
+    with st.spinner(""):
+        response, intent, score = respond_to_user(prompt, intents)
+        st.session_state.spinner = False  # Desactivar el spinner una vez que se completa el procesamiento
 
     with st.chat_message("assistant", avatar="static/images/chatbot.png"):
-       display_text_word_by_word(response)
-    st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
+        display_text_word_by_word(response)
+        st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
+
 
 # Botón de limpiar
 if st.button("Limpiar conversación"):
