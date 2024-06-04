@@ -215,9 +215,13 @@ if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
         display_text_word_by_word(response)
         st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
 
+# Función para limpiar la conversación
+def clear_chat_history():
+    st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
+    st.session_state.chat_aborted = False
 
-# Botón de limpiar
-if st.button("Limpiar conversación"):
-    st.session_state.messages = []
-    st.session_state.estado = "inicial"
-    st.experimental_rerun()  # Reiniciar la aplicación
+    
+# Botón para limpiar la conversación
+if st.button('Limpiar historial de chat', on_click=clear_chat_history):
+    st.experimental_rerun()  # Recargar la página para actualizar la conversación
+
