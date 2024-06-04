@@ -193,9 +193,9 @@ def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
     st.session_state.chat_aborted = False
 
-with st.sidebar:
-        st.title('Magnétic Bot')
-        st.button('Limpiar historial de chat', on_click=clear_chat_history)
+#with st.sidebar:
+        #st.title('Magnétic Bot')
+        #st.button('Limpiar historial de chat', on_click=clear_chat_history)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
