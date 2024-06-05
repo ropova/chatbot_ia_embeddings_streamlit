@@ -238,13 +238,6 @@ with st.sidebar:
     # Agregar la imagen logo.png en la parte inferior de la barra lateral
     new_image_path = 'static/images/logo.png'  # Cambia esta ruta a la imagen que desees mostrar
     st.image(new_image_path, caption="", use_column_width=True,)
-
-
-    st.markdown(hide_img_fs, unsafe_allow_html=True)
-
-    st.markdown("<hr style='margin-top: 0px; margin-bottom: 50px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
-
-    st.button('Limpiar historial de chat', on_click=clear_chat_history)
     
 
 if "messages" not in st.session_state:
