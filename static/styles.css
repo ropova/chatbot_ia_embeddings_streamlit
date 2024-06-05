@@ -89,12 +89,49 @@
 
 .st-emotion-cache-1629p8f h1{/*Título de la barra lateral*/
   text-align: center;
+  color: white;
 }
 
 .st-emotion-cache-8atqhb{/*Boton de la barra lateral*/
   text-align: center;
 }
 
-.st-emotion-cache-1kyxreq{
+.st-emotion-cache-1kyxreq{/*Alineación botón barra lateral*/
   display: ruby;
+}
+
+.st-emotion-cache-6qob1r{/*Background barra lateral*/
+  background: #1E1E20;
+}
+
+.st-emotion-cache-1nm2qww {/*icono esquina cerrar barra lateral*/
+  background: #ffffff;
+  color: #1E1E20;
+  border-radius: 20px;
+}
+
+.st-emotion-cache-10zg0a4 {/*icono esquina abrir barra lateral*/
+  background: #ffffff;
+  color: #0070BA;
+  border-radius: 20px;
+}  
+
+.st-emotion-cache-1jmvea6 p {
+  font-size: 14px;
+  color:white;
+}
+
+.st-emotion-cache-1pbsqtx {/*Tamaño icono abre y cierra barra lateral*/
+    width: 1rem;
+    height: 1rem;
+}
+
+.st-emotion-cache-ztfqz8 {/*Cirdulo abrir barra lateral*/
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.st-emotion-cache-iiif1v {/*Cirdulo cerrar barra lateral*/
+  min-width: 2rem;
+  min-height: 2rem;
 }
