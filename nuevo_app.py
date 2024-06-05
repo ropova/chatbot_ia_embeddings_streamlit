@@ -200,7 +200,11 @@ def clear_chat_history():
 avatars = {
     "Avatar 1": "static/images/gente.png",
     "Avatar 2": "static/images/gente1.png",
-    "Avatar 3": "static/images/gente2.png"
+    "Avatar 3": "static/images/gente2.png",
+    "Avatar 4": "static/images/gente3.png",
+    "Avatar 5": "static/images/gente4.png",
+    "Avatar 6": "static/images/gente5.png",
+    "Avatar 7": "static/images/gente6.png"
 }    
 
 # Crea la barra lateral con el parámetro expandable
@@ -213,7 +217,6 @@ with st.sidebar:
 
     # Previsualización del avatar seleccionado
     st.image(avatars[selected_avatar], caption="", width=100)
-
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
