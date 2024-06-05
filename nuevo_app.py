@@ -219,14 +219,25 @@ with st.sidebar:
     </style>
     '''
 
-    #st.title('Personalización Avatar')
-
+        #st.title('Personalización Avatar')
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 0px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
     # Previsualización del avatar seleccionado
     avatar_placeholder = st.empty()
     selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
     st.session_state.user_avatar = avatars[selected_avatar]    
+    st.markdown("<hr style='margin-top: 10px; margin-bottom: 0px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
     #avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
     avatar_placeholder.image(avatars[selected_avatar], caption="", width=150)
+
+    st.markdown(hide_img_fs, unsafe_allow_html=True)
+
+    st.button('Limpiar historial de chat', on_click=clear_chat_history)
+
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 250px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    
+    # Agregar la imagen logo.png en la parte inferior de la barra lateral
+    new_image_path = 'static/images/logo.png'  # Cambia esta ruta a la imagen que desees mostrar
+    st.image(new_image_path, caption="", use_column_width=True,)
 
 
     st.markdown(hide_img_fs, unsafe_allow_html=True)
