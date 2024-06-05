@@ -196,10 +196,23 @@ def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
     st.session_state.chat_aborted = False
 
+# Opciones de avatares
+avatars = {
+    "Avatar 1": "static/images/gente.png",
+    "Avatar 2": "static/images/gente1.png",
+    "Avatar 3": "static/images/gente2.png"
+}    
+
 # Crea la barra lateral con el parámetro expandable
 with st.sidebar:
     st.title('Magnétic Bot')
     st.button('Limpiar historial de chat', on_click=clear_chat_history)
+
+    selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()))
+    st.session_state.user_avatar = avatars[selected_avatar]    
+
+    # Previsualización del avatar seleccionado
+    st.image(avatars[selected_avatar], caption="", width=100)
 
 
 if "messages" not in st.session_state:
@@ -217,9 +230,9 @@ if not st.session_state.messages:
     st.session_state.messages.append({"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"})
 
 if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
-    with st.chat_message("user", avatar="static/images/gente.png"):
+    with st.chat_message("user", avatar=st.session_state.user_avatar):
         st.markdown(prompt)
-    st.session_state.messages.append({"role": "user", "content": prompt, "image": "static/images/gente.png"})     
+    st.session_state.messages.append({"role": "user", "content": prompt, "image": st.session_state.user_avatar})     
 
     with st.spinner(""):
         response, intent, score = respond_to_user(prompt, intents)
