@@ -14,7 +14,7 @@ from sklearn.preprocessing import LabelEncoder
 import time
 
 # Configurar la barra lateral para que esté cerrada por defecto
-st.set_page_config(initial_sidebar_state='collapsed')
+#st.set_page_config(initial_sidebar_state='collapsed')
 
 def load_css():
     with open("static/styles.css", "r") as f:
@@ -207,16 +207,31 @@ avatars = {
     "Avatar 7": "static/images/gente6.png"
 }    
 
-# Crea la barra lateral con el parámetro expandable
 with st.sidebar:
-    st.title('Magnétic Bot')
-    st.button('Limpiar historial de chat', on_click=clear_chat_history)
-
-    selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()))
-    st.session_state.user_avatar = avatars[selected_avatar]    
+    st.title('Personalización')
 
     # Previsualización del avatar seleccionado
-    st.image(avatars[selected_avatar], caption="", width=100)
+    avatar_placeholder = st.empty()
+    selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
+    st.session_state.user_avatar = avatars[selected_avatar]    
+    avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
+    
+    hide_img_fs = '''
+    <style>
+    button[title="View fullscreen"]{
+        visibility: hidden;}
+    hr {
+        border-top: 2px solid #FFFFFF;  /* Cambiar el color del divisor a blanco */
+    }
+    </style>
+    '''
+
+    st.markdown(hide_img_fs, unsafe_allow_html=True)
+
+    st.markdown("<hr style='margin-top: 20px; margin-bottom: 20px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+
+    st.button('Limpiar historial de chat', on_click=clear_chat_history)
+    
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -246,5 +261,5 @@ if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
         st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
     
 # Botón para limpiar la conversación
-st.button('Limpiar historial de chat', on_click=clear_chat_history, key="unique_button_key")
-   #st.experimental_rerun() 
+#st.button('Limpiar historial de chat', on_click=clear_chat_history, key="unique_button_key")
+# #st.experimental_rerun() 
