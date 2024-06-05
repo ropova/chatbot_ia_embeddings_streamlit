@@ -87,10 +87,14 @@
   color:#000000;
 }
 
-.st-emotion-cache-1629p8f h1{
+.st-emotion-cache-1629p8f h1{/*Título de la barra lateral*/
   text-align: center;
 }
 
-.st-emotion-cache-8atqhb{
+.st-emotion-cache-8atqhb{/*Boton de la barra lateral*/
   text-align: center;
+}
+
+.st-emotion-cache-1kyxreq{
+  display: ruby;
 }
