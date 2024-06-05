@@ -208,28 +208,30 @@ avatars = {
 }    
 
 with st.sidebar:
-    st.title('Personalización')
 
-    # Previsualización del avatar seleccionado
-    avatar_placeholder = st.empty()
-    selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
-    st.session_state.user_avatar = avatars[selected_avatar]    
-    #avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
-    avatar_placeholder.image(avatars[selected_avatar], caption="", width=150)
-    
     hide_img_fs = '''
     <style>
     button[title="View fullscreen"]{
         visibility: hidden;}
     hr {
-        border-top: 2px solid #FFFFFF;  /* Cambiar el color del divisor a blanco */
+        border-top: 2px solid #404040;  /* Cambiar el color del divisor a blanco */
     }
     </style>
     '''
 
+    st.title('Personalización Avatar')
+
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 20px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+
+    # Previsualización del avatar seleccionado
+    avatar_placeholder = st.empty()
+    selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
+    st.session_state.user_avatar = avatars[selected_avatar]    
+    avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
+
     st.markdown(hide_img_fs, unsafe_allow_html=True)
 
-    st.markdown("<hr style='margin-top: 20px; margin-bottom: 20px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 50px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
 
     st.button('Limpiar historial de chat', on_click=clear_chat_history)
     
