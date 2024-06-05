@@ -219,7 +219,7 @@ with st.sidebar:
     </style>
     '''
 
-    st.title('Personalización Avatar')
+    #st.title('Personalización Avatar')
 
     st.markdown("<hr style='margin-top: 0px; margin-bottom: 20px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
 
