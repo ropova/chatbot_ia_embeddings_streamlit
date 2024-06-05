@@ -214,7 +214,8 @@ with st.sidebar:
     avatar_placeholder = st.empty()
     selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
     st.session_state.user_avatar = avatars[selected_avatar]    
-    avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
+    #avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
+    avatar_placeholder.image(avatars[selected_avatar], caption="", width=150)
     
     hide_img_fs = '''
     <style>
