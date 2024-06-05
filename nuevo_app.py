@@ -221,8 +221,6 @@ with st.sidebar:
 
     #st.title('Personalización Avatar')
 
-    st.markdown("<hr style='margin-top: 0px; margin-bottom: 20px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
-
     # Previsualización del avatar seleccionado
     avatar_placeholder = st.empty()
     selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
