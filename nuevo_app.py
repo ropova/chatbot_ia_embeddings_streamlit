@@ -13,7 +13,7 @@ import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 import time
 
-Configurar la barra lateral para que esté cerrada por defecto
+#Configurar la barra lateral para que esté cerrada por defecto
 st.set_page_config(initial_sidebar_state='collapsed')
 
 def load_css():
