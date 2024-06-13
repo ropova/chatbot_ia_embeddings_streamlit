@@ -218,7 +218,7 @@ with st.sidebar:
 
     st.button('Limpiar historial de chat', on_click=clear_chat_history)
 
-    st.markdown("<hr style='margin-top: 0px; margin-bottom: 150px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 100px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
     
     # Agregar la imagen logo.png en la parte inferior de la barra lateral
     new_image_path = 'static/images/logo.png'  # Cambia esta ruta a la imagen que desees mostrar
