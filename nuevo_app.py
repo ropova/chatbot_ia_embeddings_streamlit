@@ -159,7 +159,7 @@ def respond_to_user(user_input, intents):
     # Detectar la intención normalmente
     intent, score = intent_detection(user_input)
     print(f"Detected intent: {intent} with score: {score}")  # Imprimir las intenciones y puntajes en la consola
-    threshold = 0.9  # Umbral para la confianza en la intención
+    threshold = 0.6  # Umbral para la confianza en la intención
     if score < threshold:
         print('No entiendo. ¿Puedes reformular la pregunta?')  # Imprimir en la consola si no se entiende la pregunta
         return 'No entiendo. ¿Puedes reformular la pregunta?', intent, score
