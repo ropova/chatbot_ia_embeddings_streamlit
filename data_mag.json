@@ -47,8 +47,8 @@
         },
         {
             "tag": "temas_ayuda",
-            "patterns": ["¿sobre qué temas me puedes ayudar?", "¿qué temas sabes?", "¿qué preguntas puedo hacerte?", "¿cuales temas sabes?", "¿en qué temas puedes asistirme?"],
-            "responses": ["Puedo ayudarte con temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temas técnicos sobre impresión, marketing digital, diseño y publicidad"]
+            "patterns": ["¿sobre qué temas me puedes ayudar?", "temas de ayuda", "¿qué temas sabes?", "¿qué preguntas puedo hacerte?", "¿cuales temas sabes?", "¿en qué temas puedes asistirme?"],
+            "responses": ["Puedo ayudarte con temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temss técnicos sobre impresión, marketing digital, diseño y publicidad"]
         },
         {
             "tag": "servicios",
@@ -60,7 +60,101 @@
             "tag": "empresa",
             "patterns": ["¿qué es magnética agencia creativa?", "¿quién es magnética agencia creativa ?", "¿qué es magnética?", "¿quién es magnética?", "¿magnética?"],
             "responses": ["Somos una Agencia de Marketing Digital, enfocados en impulsar tu marca, darle vida a tus ideas y generar el impacto que deseas en el mercado"]
+        },
+        {
+            "tag": "vinilos_autoadhesivos",
+            "patterns": ["¿Qué son los vinilos autoadhesivos?", "Usos de los vinilos autoadhesivos", "Información sobre vinilos autoadhesivos", "¿Para qué sirven los vinilos autoadhesivos?", "Ventajas de los vinilos autoadhesivos"],
+            "responses": ["Los vinilos autoadhesivos son materiales que se adhieren a superficies lisas sin necesidad de pegamento adicional.", "Son ideales para aplicaciones en interiores y exteriores debido a su fácil instalación.", "Se utilizan comúnmente para señalización, gráficos y decoración.", "Ofrecen una alta durabilidad y resistencia a la intemperie.", "Pueden aplicarse en ventanas, paredes, vehículos y más."]
+        },
+        {
+            "tag": "vinilos_microperforados",
+            "patterns": ["¿Qué son los vinilos microperforados?", "Usos de los vinilos microperforados", "Beneficios de los vinilos microperforados", "Aplicaciones de vinilos microperforados", "Características de los vinilos microperforados"],
+            "responses": ["Los vinilos microperforados permiten la visibilidad desde el interior mientras muestran una imagen desde el exterior.", "Son perfectos para aplicaciones en ventanas y vitrinas.", "Ayudan a reducir el calor y el brillo solar.", "Permiten una excelente visibilidad para los pasajeros en vehículos.", "Se usan comúnmente en publicidad en ventanas y gráficos de vehículos."]
+        },
+        {
+            "tag": "vinilos_de_corte",
+            "patterns": ["¿Qué son los vinilos de corte?", "Usos de los vinilos de corte", "Beneficios de los vinilos de corte", "Aplicaciones de vinilos de corte", "Características de los vinilos de corte"],
+            "responses": ["Los vinilos de corte se utilizan para crear letras y gráficos troquelados.", "Son ideales para señalización y decoración.", "Ofrecen un acabado limpio y profesional.", "Se pueden usar en una variedad de superficies, incluyendo vidrio, metal y plástico.", "Son resistentes y duraderos, adecuados para uso interior y exterior."]
+        },
+        {
+            "tag": "vinilos_laminados",
+            "patterns": ["¿Qué son los vinilos laminados?", "Usos de los vinilos laminados", "Beneficios de los vinilos laminados", "Aplicaciones de vinilos laminados", "Características de los vinilos laminados"],
+            "responses": ["Los vinilos laminados tienen una capa protectora que aumenta su durabilidad.", "Ofrecen resistencia adicional contra rayones y UV.", "Son ideales para aplicaciones donde se requiere protección adicional.", "Se utilizan en gráficos de vehículos, señalización exterior y más.", "Proporcionan un acabado profesional y prolongan la vida útil del vinilo."]
+        },
+        {
+            "tag": "vinilos_reflectantes",
+            "patterns": ["¿Qué son los vinilos reflectantes?", "Usos de los vinilos reflectantes", "Beneficios de los vinilos reflectantes", "Aplicaciones de vinilos reflectantes", "Características de los vinilos reflectantes"],
+            "responses": ["Los vinilos reflectantes aumentan la visibilidad en condiciones de poca luz.", "Son ideales para señalización nocturna y de seguridad.", "Se utilizan comúnmente en señales de tráfico, vehículos y equipo de emergencia.", "Ofrecen una alta durabilidad y resistencia a la intemperie.", "Son visibles desde largas distancias y bajo diferentes ángulos de luz."]
+        },
+        {
+            "tag": "vinilos_removibles",
+            "patterns": ["¿Qué son los vinilos removibles?", "Usos de los vinilos removibles", "Beneficios de los vinilos removibles", "Aplicaciones de vinilos removibles", "Características de los vinilos removibles"],
+            "responses": ["Los vinilos removibles son fáciles de instalar y retirar sin dejar residuos.", "Son ideales para aplicaciones temporales, como eventos y promociones.", "Permiten cambios frecuentes sin dañar las superficies.", "Se utilizan en decoración de interiores, publicidad temporal y más.", "Ofrecen una buena adherencia mientras permiten una fácil remoción."]
+        },
+        {
+            "tag": "interiores_vinilos",
+            "patterns": ["¿Qué vinilos son mejores para interiores?", "Usos de vinilos en interiores", "Beneficios de vinilos interiores", "Aplicaciones de vinilos interiores", "Características de vinilos para interiores"],
+            "responses": ["Los vinilos mates son ideales para evitar reflejos bajo iluminación artificial.", "Vinilos removibles son perfectos para eventos y promociones temporales.", "Tapices de vinilo y decoraciones murales añaden estilo a los espacios interiores.", "Se pueden usar en oficinas, tiendas, hogares y más.", "Ofrecen una gran variedad de diseños y acabados para adaptarse a cualquier decoración."]
+        },
+        {
+            "tag": "exteriores_vinilos",
+            "patterns": ["¿Qué vinilos son mejores para exteriores?", "Usos de vinilos en exteriores", "Beneficios de vinilos exteriores", "Aplicaciones de vinilos exteriores", "Características de vinilos para exteriores"],
+            "responses": ["Vinilos de alta durabilidad son esenciales para resistir las condiciones climáticas.", "Vinilos con protección UV evitan la decoloración por el sol.", "Son ideales para señalización, publicidad exterior y decoraciones de fachadas.", "Vinilos reflectantes aumentan la visibilidad en condiciones de poca luz.", "Ofrecen una excelente adherencia y resistencia al agua y viento."]
+        },
+        {
+            "tag": "vehiculos_vinilos",
+            "patterns": ["¿Qué vinilos son mejores para vehículos?", "Usos de vinilos en vehículos", "Beneficios de vinilos para vehículos", "Aplicaciones de vinilos en vehículos", "Características de vinilos para vehículos"],
+            "responses": ["Vinilos flexibles y duraderos se adaptan a las curvas y superficies irregulares de los vehículos.", "Laminados de protección aumentan la vida útil de los gráficos en vehículos.", "Vinilos reflectantes mejoran la visibilidad nocturna para mayor seguridad.", "Son perfectos para publicidad móvil y branding de flotas comerciales.", "Ofrecen una alta resistencia a la intemperie y lavado frecuente."]
+        },
+        {
+            "tag": "ventanas_vinilos",
+            "patterns": ["¿Qué vinilos son mejores para ventanas?", "Usos de vinilos en ventanas", "Beneficios de vinilos para ventanas", "Aplicaciones de vinilos en ventanas", "Características de vinilos para ventanas"],
+            "responses": ["Vinilos microperforados permiten visibilidad desde el interior mientras muestran gráficos en el exterior.", "Vinilos translúcidos crean efectos decorativos únicos y atractivos.", "Vinilos estáticos reutilizables son ideales para promociones cambiantes.", "Ofrecen privacidad y reducción del brillo solar.", "Son fáciles de instalar y remover sin dejar residuos."]
+        },
+        {
+            "tag": "colores_vinilos",
+            "patterns": ["¿Qué colores de vinilos son recomendables?", "Mejores colores de vinilos", "Usos de colores en vinilos", "Beneficios de diferentes colores en vinilos", "Aplicaciones de vinilos según el color"],
+            "responses": ["Colores vivos capturan la atención y son ideales para promociones y publicidad.", "Colores corporativos aseguran consistencia en branding y marketing.", "Colores reflectantes mejoran la visibilidad nocturna para seguridad y señalización.", "Colores mates evitan deslumbramiento en interiores.", "Variedad de colores disponibles para adaptarse a cualquier diseño y necesidad."]
+        },
+        {
+            "tag": "tamaños_vinilos",
+            "patterns": ["¿Qué tamaños de vinilos están disponibles?", "Mejores tamaños de vinilos", "Usos de diferentes tamaños de vinilos", "Beneficios de diferentes tamaños de vinilos", "Aplicaciones de vinilos según el tamaño"],
+            "responses": ["Tamaños estándar y personalizados están disponibles para adaptarse a cualquier proyecto.", "Grandes formatos son ideales para carteles, murales y señalización exterior.", "Pequeños formatos se usan para etiquetas, señalización interna y decoración.", "Tamaños personalizados aseguran un ajuste perfecto para cualquier aplicación.", "Variedad de tamaños permite flexibilidad en diseño y implementación."]
+        },
+        {
+            "tag": "tecnologias_impresion",
+            "patterns": ["¿Qué tecnologías de impresión se usan para vinilos?", "Mejores tecnologías de impresión para vinilos", "Usos de diferentes tecnologías de impresión en vinilos", "Beneficios de tecnologías de impresión para vinilos", "Aplicaciones de vinilos según la tecnología de impresión"],
+            "responses": ["La impresión digital ofrece alta calidad y detalle, ideal para personalización en pequeñas cantidades.", "La impresión serigráfica es excelente para grandes tiradas y durabilidad.", "La impresión UV proporciona secado instantáneo y es ideal para aplicaciones exteriores.", "La impresión por sublimación ofrece colores vibrantes y duraderos.", "Cada tecnología tiene sus ventajas según el tipo de proyecto y requerimientos."]
+        },
+        {
+            "tag": "preparacion_superficies",
+            "patterns": ["¿Cómo preparar superficies para aplicar vinilos?", "Preparación de superficies para vinilos", "Mejores prácticas para preparar superficies antes de aplicar vinilos", "Pasos para preparar superficies para vinilos", "Consejos para preparar superficies antes de aplicar vinilos"],
+            "responses": ["Limpie la superficie a fondo para eliminar polvo, grasa y residuos.", "Asegúrese de que la superficie esté seca antes de la aplicación.", "Utilice alcohol isopropílico para una limpieza profunda.", "Superficies lisas y no porosas son ideales para la adhesión de vinilos.", "Evite aplicar vinilos en superficies rugosas o con texturas sin preparación adecuada."]
+        },
+        {
+            "tag": "herramientas_aplicacion",
+            "patterns": ["¿Qué herramientas se necesitan para aplicar vinilos?", "Herramientas para aplicar vinilos", "Mejores herramientas para la aplicación de vinilos", "Equipamiento necesario para aplicar vinilos", "Consejos sobre herramientas para la aplicación de vinilos"],
+            "responses": ["Espátulas de goma ayudan a eliminar burbujas y asegurar una aplicación uniforme.", "Rodillos de presión son útiles para aplicaciones grandes y curvas.", "Aplicadores de calor facilitan la adhesión en superficies curvas y texturizadas.", "Cintas de aplicación ayudan a posicionar vinilos de corte y gráficos complejos.", "Rociadores de agua con jabón facilitan la aplicación en método húmedo."]
+        },
+        {
+            "tag": "tecnicas_instalacion",
+            "patterns": ["¿Cuáles son las técnicas para instalar vinilos?", "Técnicas de instalación de vinilos", "Mejores prácticas para instalar vinilos", "Pasos para instalar vinilos", "Consejos para la instalación de vinilos"],
+            "responses": ["El método en seco es adecuado para superficies pequeñas y vinilos removibles.", "El método en húmedo permite reposicionar el vinilo durante la aplicación.", "Utilice una espátula para eliminar burbujas de aire durante la aplicación.", "Comience la aplicación desde el centro y avance hacia los bordes.", "Aplique calor para asegurar una adhesión firme en superficies curvas y texturizadas."]
+        },
+        {
+            "tag": "cuidado_mantenimiento",
+            "patterns": ["¿Cómo cuidar y mantener los vinilos?", "Cuidado de vinilos", "Mejores prácticas para el mantenimiento de vinilos", "Consejos para cuidar vinilos", "Pasos para mantener vinilos en buen estado"],
+            "responses": ["Limpie los vinilos regularmente con agua y jabón suave.", "Evite el uso de limpiadores abrasivos que puedan dañar el vinilo.", "Inspeccione los bordes periódicamente para asegurar que no se despeguen.", "Proteja los vinilos de la exposición prolongada a la luz solar intensa.", "Aplique una capa de laminado para mayor protección y durabilidad."]
+        },
+        {
+            "tag": "casos_uso",
+            "patterns": ["¿Cuáles son los casos de uso para los vinilos?", "Usos comunes de los vinilos", "Ejemplos de uso de vinilos", "Aplicaciones prácticas de vinilos", "Casos de uso para diferentes tipos de vinilos"],
+            "responses": ["Los vinilos se usan en branding corporativo y decoración de oficinas.", "Son ideales para la publicidad móvil en vehículos comerciales.", "Se utilizan en señalización interior y exterior para direcciones y seguridad.", "Decoraciones temporales para eventos y promociones son comunes.", "Gráficos de escaparates y vitrinas atraen la atención de los clientes."]
+        },
+        {
+            "tag": "materiales_ecologicos",
+            "patterns": ["¿Qué materiales ecológicos se usan en vinilos?", "Vinilos ecológicos", "Beneficios de materiales ecológicos en vinilos", "Tipos de vinilos ecológicos", "Usos de vinilos ecológicos"],
+            "responses": ["Existen vinilos libres de PVC que son más amigables con el medio ambiente.", "Tintas eco-friendly reducen el impacto ambiental.", "Materiales reciclables y reutilizables son cada vez más populares.", "Son ideales para empresas que buscan prácticas sostenibles.", "Vinilos ecológicos ofrecen las mismas ventajas con menor impacto ambiental."]
         }
-
     ]
 }
