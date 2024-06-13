@@ -2,158 +2,158 @@
     "intents": [
         {
             "tag": "nombre",
-            "patterns": ["¿cómo es tu nombre?", "¿cómo te llamas?", "tu nombre", "¿quién eres?", "dinos tu nombre", "nombre completo", "¿Cómo debería llamarte?", "¿Cuál es tu apodo?", "¿Puedo llamarte de alguna forma?"],
+            "patterns": ["¿Cuál es tu nombre completo?", "¿Cómo te gustaría que te llame?", "Tu apelativo", "¿Puedo llamarte de alguna manera?", "¿Cómo te conocen?", "¿Cuál es tu nombre oficial?", "¿Cuál es tu apodo?", "¿cómo es tu nombre?", "¿cómo te llamas?", "tu nombre", "¿quién eres?", "dinos tu nombre", "nombre completo", "¿Cómo debería llamarte?", "¿Cuál es tu apodo?", "¿Puedo llamarte de alguna forma?"],
             "responses": ["Me llamo Magnétic Bot", "Mi nombre es Magnétic Bot", "Puedes llamarme Magnétic Bot", "Soy Magnétic Bot, tu asistente virtual.", "Mi nombre completo es Magnétic Bot, pero puedes llamarme Magnétic.", "Soy conocido como Magnétic Bot."]
         },
         {
             "tag": "profesion",
-            "patterns": ["¿A qué te dedicas?", "¿Cuál es tu trabajo?", "en qué trabajas", "¿cuál es tu función?", "Para qué sirves"],
+            "patterns": ["¿Cuál es tu labor?", "¿Cuál es tu función aquí?", "¿Cuál es tu rol?", "¿En qué trabajas específicamente?" ,"¿A qué te dedicas?", "¿Cuál es tu trabajo?", "en qué trabajas", "¿cuál es tu función?", "Para qué sirves"],
             "responses": ["Soy Magnétic Bot, tu asistente virtual. Puedo ayudarte con temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temás técnicos sobre impresión, marketing digitl, diseño y publicidad", "Soy tu asistente virtual y estoy para despejar tus dudas en temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temás técnicos sobre impresión, marketing digital, diseño y publicidad", "Mi trabajo es solucionar tus inquietudes en temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temás técnicos sobre impresión, marketing digital, diseño y publicidad"]
         },
         {
             "tag": "deporte_favorito",
-            "patterns": ["¿Cuál es tu deporte favorito?", "cuál deporte te gusta", "¿Te gusta practicar algún deporte?", "¿Tienes alguna disciplina deportiva preferida?"],
+            "patterns": ["¿Practicas algún deporte?", "¿Tienes algún deporte favorito para practicar?", "¿Te gusta algún deporte en particular?", "¿Eres fanático de algún deporte?", "¿Tienes alguna disciplina deportiva que prefieras?" ,"¿Cuál es tu deporte favorito?", "cuál deporte te gusta", "¿Te gusta practicar algún deporte?", "¿Tienes alguna disciplina deportiva preferida?"],
             "responses": ["Mi deporte favorito es el fútbol. Me encanta jugar y ver partidos.", "Practico natación desde hace años, es mi deporte favorito.", "Disfruto mucho del baloncesto, tanto jugarlo como verlo en la televisión."]
         },
         {
             "tag": "despedida",
-            "patterns": ["adiós", "hasta luego", "nos vemos", "hasta pronto", "cuídate", "chao", "Nos vemos más tarde", "Es hora de irme", "Hasta pronto, amigo"],
+            "patterns": ["Hasta la vista", "Hasta la próxima", "¡Nos vemos más tarde!", "Es hora de partir", "¡Adiós por ahora!" ,"adiós", "hasta luego", "nos vemos", "hasta pronto", "cuídate", "chao", "Nos vemos más tarde", "Es hora de irme", "Hasta pronto, amigo"],
             "responses": ["¡Hasta luego!", "¡Adiós!", "Nos vemos pronto.", "¡Hasta pronto! Cuídate.", "¡Adiós! Que tengas un buen día.", "¡Nos vemos luego!", "¡Chao!"]
         },
         {
             "tag": "chiste",
-            "patterns": ["¿Puedes contarme un chiste?", "Dime algo gracioso", "¿Tienes algún chiste para compartir?"],
+            "patterns": ["Dame un chiste", "Cuéntame algo gracioso", "¿Puedes decirme algo divertido?", "¿Tienes un chascarrillo para compartir?", "¿Tienes algo para hacerme reír?" ,"¿Puedes contarme un chiste?", "Dime algo gracioso", "¿Tienes algún chiste para compartir?"],
             "responses": ["¿Por qué el libro de matemáticas estaba triste? Porque tenía demasiados problemas.", "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!", "¿Cuál es el animal más antiguo? La cebra, porque está en blanco y negro."]
         },
         {
             "tag": "agradecimiento",
-            "patterns": ["gracias", "muchas gracias", "te agradezco", "agradecido", "Te agradezco mucho", "Gracias por tu ayuda", "Estoy muy agradecido"],
+            "patterns": ["Mil gracias", "Te doy las gracias", "Estoy muy agradecido", "Gracias de nuevo", "Te agradezco mucho", "gracias", "muchas gracias", "te agradezco", "agradecido", "Te agradezco mucho", "Gracias por tu ayuda", "Estoy muy agradecido"],
             "responses": ["De nada.", "¡No hay de qué!", "¡Con gusto!", "No hay problema, siempre estoy aquí para ayudarte.", "¡Gracias a ti por confiar en mí!"]
         },
         {
             "tag": "dia",
-            "patterns": ["¿Cómo va tu día?", "¿Qué tal está yendo tu día?", "¿Cómo está siendo tu día hoy?"],
+            "patterns": ["¿Cómo te está yendo el día?", "¿Qué tal tu día hasta ahora?", "¿Cómo va tu jornada?", "¿Qué tal está siendo tu día?" ,"¿Cómo va tu día?", "¿Qué tal está yendo tu día?", "¿Cómo está siendo tu día hoy?"],
             "responses": ["Mi día va bien, gracias. ¿Y el tuyo? cómo va", "Hasta ahora, mi día ha sido bastante bueno. ¿Y el tuyo cómo va?", "Mi día está siendo productivo. ¿Y tú, cómo va tu día?"]
         },
         {
             "tag": "edad",
-            "patterns": ["¿cuántos años tienes?", "años", "edad", "¿qué edad tienes?", "¿cuánto tiempo tienes?", "¿desde cuándo existes?", "¿Desde cuándo existes como programa?", "¿Cuál es tu fecha de creación?", "¿Cuánto tiempo llevas en línea?"],
+            "patterns": ["¿Cuántos años tienes?", "Edad que tienes", "¿Desde cuándo existes?", "¿Cuánto tiempo llevas en línea?", "¿Desde cuándo estás activo?" ,"¿cuántos años tienes?", "años", "edad", "¿qué edad tienes?", "¿cuánto tiempo tienes?", "¿desde cuándo existes?", "¿Desde cuándo existes como programa?", "¿Cuál es tu fecha de creación?", "¿Cuánto tiempo llevas en línea?"],
             "responses": ["No tengo edad. Soy un programa.", "No tengo una edad como la de los humanos.", "Soy un programa de inteligencia artificial, no tengo una edad física.", "Soy tan joven como el día en que fui creado."]
         },
         {
             "tag": "ubicacion",
-            "patterns": ["¿dónde te encuentras?", "¿cuál es tu ubicación?", "¿dónde vives?", "¿Dónde se almacena tu información?", "¿Cómo accedo a ti?"],
+            "patterns": ["¿Dónde estás basado?", "¿En qué parte del mundo te encuentras?", "¿Cuál es tu ubicación física?", "¿Dónde reside tu servidor?", "¿Dónde estás alojado?" ,"¿dónde te encuentras?", "¿cuál es tu ubicación?", "¿dónde vives?", "¿Dónde se almacena tu información?", "¿Cómo accedo a ti?"],
             "responses": ["Estoy en la nube.", "No tengo una ubicación física. Estoy en internet.", "Me encuentro en un servidor en la nube, disponible en cualquier momento y lugar.", "Mi ubicación es virtual, siempre estoy en línea para ayudarte.", "Vivo en el mundo digital, donde la información es mi hogar."]
         },
         {
             "tag": "temas_ayuda",
-            "patterns": ["¿sobre qué temas me puedes ayudar?", "temas de ayuda", "¿qué temas sabes?", "¿qué preguntas puedo hacerte?", "¿cuales temas sabes?", "¿en qué temas puedes asistirme?"],
+            "patterns": ["¿Qué temas manejas?", "¿En qué temas puedes asistirme?", "¿Qué áreas cubres?", "¿Sobre qué temas puedes ayudarme?", "¿Cuáles son tus especialidades?" ,"¿sobre qué temas me puedes ayudar?", "temas de ayuda", "¿qué temas sabes?", "¿qué preguntas puedo hacerte?", "¿cuales temas sabes?", "¿en qué temas puedes asistirme?"],
             "responses": ["Puedo ayudarte con temas referentes a nuestra empresa \"Magnética Agencia Creativa\", nuestros servicios y temss técnicos sobre impresión, marketing digital, diseño y publicidad"]
         },
         {
             "tag": "servicios",
-            "patterns": ["¿qué servicios prestan?", "¿cuáles son los servicios de la empresa?", "¿qué servicios ofrecen?", "¿cuales servicios ofrecen?", "¿cuáles servicios presta la empresa?"],
+            "patterns": ["¿Qué tipo de servicios ofrecen?", "¿Cuáles son sus ofertas de servicio?", "¿Qué servicios proporcionan?", "¿Cuál es el catálogo de servicios de la empresa?", "¿Qué servicios están disponibles?", "¿qué servicios prestan?", "¿cuáles son los servicios de la empresa?", "¿qué servicios ofrecen?", "¿cuales servicios ofrecen?", "¿cuáles servicios presta la empresa?"],
             "responses": ["<p style=\"color: white;\">Nuestros servicios son:</p><ul style=\"color: white;\"><li><strong>Soluciones Gráficas:</strong><br>- Desarrollo de marca<br>- Diseño gráfico<br>- Impresión y montaje<br>- Material publicitario</li><li><strong>Marketing Digital:</strong><br>- Social media<br>- Anuncios/Publicidad<br>- Sitios web<br>- Creación de contenido</li></ul>"]
 
         },
         {
             "tag": "empresa",
-            "patterns": ["¿qué es magnética agencia creativa?", "¿quién es magnética agencia creativa ?", "¿qué es magnética?", "¿quién es magnética?", "¿magnética?"],
+            "patterns": ["¿Qué hace Magnética Agencia Creativa?", "¿Quiénes son ustedes?", "¿Qué servicios ofrecen como empresa?", "¿Qué es exactamente Magnética Agencia Creativa?", "¿Qué tipo de empresa es Magnética?", "¿qué es magnética agencia creativa?", "¿quién es magnética agencia creativa ?", "¿qué es magnética?", "¿quién es magnética?", "¿magnética?"],
             "responses": ["Somos una Agencia de Marketing Digital, enfocados en impulsar tu marca, darle vida a tus ideas y generar el impacto que deseas en el mercado"]
         },
         {
             "tag": "vinilos_autoadhesivos",
-            "patterns": ["¿Qué son los vinilos autoadhesivos?", "Usos de los vinilos autoadhesivos", "Información sobre vinilos autoadhesivos", "¿Para qué sirven los vinilos autoadhesivos?", "Ventajas de los vinilos autoadhesivos"],
+            "patterns": ["¿Cuáles son los beneficios de los vinilos autoadhesivos?", "¿Para qué sirven los vinilos que se pegan solos?", "¿Qué ventajas ofrecen los vinilos autoadhesivos?", "¿Cómo funcionan los vinilos autoadhesivos?", "¿Por qué usar vinilos autoadhesivos?", "¿Qué son los vinilos autoadhesivos?", "Usos de los vinilos autoadhesivos", "Información sobre vinilos autoadhesivos", "¿Para qué sirven los vinilos autoadhesivos?", "Ventajas de los vinilos autoadhesivos"],
             "responses": ["Los vinilos autoadhesivos son materiales que se adhieren a superficies lisas sin necesidad de pegamento adicional.", "Son ideales para aplicaciones en interiores y exteriores debido a su fácil instalación.", "Se utilizan comúnmente para señalización, gráficos y decoración.", "Ofrecen una alta durabilidad y resistencia a la intemperie.", "Pueden aplicarse en ventanas, paredes, vehículos y más."]
         },
         {
             "tag": "vinilos_microperforados",
-            "patterns": ["¿Qué son los vinilos microperforados?", "Usos de los vinilos microperforados", "Beneficios de los vinilos microperforados", "Aplicaciones de vinilos microperforados", "Características de los vinilos microperforados"],
+            "patterns": ["¿Cómo se utilizan los vinilos microperforados?", "¿Qué ventajas tienen los vinilos microperforados?", "¿Cuáles son las aplicaciones típicas de los vinilos microperforados?", "¿Por qué elegir vinilos microperforados?", "¿Dónde son útiles los vinilos microperforados?", "¿Qué son los vinilos microperforados?", "Usos de los vinilos microperforados", "Beneficios de los vinilos microperforados", "Aplicaciones de vinilos microperforados", "Características de los vinilos microperforados"],
             "responses": ["Los vinilos microperforados permiten la visibilidad desde el interior mientras muestran una imagen desde el exterior.", "Son perfectos para aplicaciones en ventanas y vitrinas.", "Ayudan a reducir el calor y el brillo solar.", "Permiten una excelente visibilidad para los pasajeros en vehículos.", "Se usan comúnmente en publicidad en ventanas y gráficos de vehículos."]
         },
         {
             "tag": "vinilos_de_corte",
-            "patterns": ["¿Qué son los vinilos de corte?", "Usos de los vinilos de corte", "Beneficios de los vinilos de corte", "Aplicaciones de vinilos de corte", "Características de los vinilos de corte"],
+            "patterns": ["¿Qué aplicaciones tienen los vinilos de corte?", "¿Cuáles son las ventajas de los vinilos de corte?", "¿Cómo se usan los vinilos de corte?", "¿Por qué optar por vinilos de corte?", "¿En qué casos son ideales los vinilos de corte?", "¿Qué son los vinilos de corte?", "Usos de los vinilos de corte", "Beneficios de los vinilos de corte", "Aplicaciones de vinilos de corte", "Características de los vinilos de corte"],
             "responses": ["Los vinilos de corte se utilizan para crear letras y gráficos troquelados.", "Son ideales para señalización y decoración.", "Ofrecen un acabado limpio y profesional.", "Se pueden usar en una variedad de superficies, incluyendo vidrio, metal y plástico.", "Son resistentes y duraderos, adecuados para uso interior y exterior."]
         },
         {
             "tag": "vinilos_laminados",
-            "patterns": ["¿Qué son los vinilos laminados?", "Usos de los vinilos laminados", "Beneficios de los vinilos laminados", "Aplicaciones de vinilos laminados", "Características de los vinilos laminados"],
+            "patterns": ["¿Qué diferencias hay con los vinilos laminados?", "¿Para qué sirven los vinilos laminados?", "¿Cómo se usan los vinilos con laminado?", "¿Por qué elegir vinilos laminados?", "¿Qué beneficios ofrecen los vinilos laminados?", "¿Qué son los vinilos laminados?", "Usos de los vinilos laminados", "Beneficios de los vinilos laminados", "Aplicaciones de vinilos laminados", "Características de los vinilos laminados"],
             "responses": ["Los vinilos laminados tienen una capa protectora que aumenta su durabilidad.", "Ofrecen resistencia adicional contra rayones y UV.", "Son ideales para aplicaciones donde se requiere protección adicional.", "Se utilizan en gráficos de vehículos, señalización exterior y más.", "Proporcionan un acabado profesional y prolongan la vida útil del vinilo."]
         },
         {
             "tag": "vinilos_reflectantes",
-            "patterns": ["¿Qué son los vinilos reflectantes?", "Usos de los vinilos reflectantes", "Beneficios de los vinilos reflectantes", "Aplicaciones de vinilos reflectantes", "Características de los vinilos reflectantes"],
+            "patterns": ["¿En qué situaciones se usan los vinilos reflectantes?", "¿Cómo funcionan los vinilos reflectantes?", "¿Qué ventajas tienen los vinilos reflectantes?", "¿Cuáles son las aplicaciones comunes de los vinilos reflectantes?", "¿Por qué optar por vinilos reflectantes?", "¿Qué son los vinilos reflectantes?", "Usos de los vinilos reflectantes", "Beneficios de los vinilos reflectantes", "Aplicaciones de vinilos reflectantes", "Características de los vinilos reflectantes"],
             "responses": ["Los vinilos reflectantes aumentan la visibilidad en condiciones de poca luz.", "Son ideales para señalización nocturna y de seguridad.", "Se utilizan comúnmente en señales de tráfico, vehículos y equipo de emergencia.", "Ofrecen una alta durabilidad y resistencia a la intemperie.", "Son visibles desde largas distancias y bajo diferentes ángulos de luz."]
         },
         {
             "tag": "vinilos_removibles",
-            "patterns": ["¿Qué son los vinilos removibles?", "Usos de los vinilos removibles", "Beneficios de los vinilos removibles", "Aplicaciones de vinilos removibles", "Características de los vinilos removibles"],
+            "patterns": ["¿Cómo se usan los vinilos removibles?", "¿Qué beneficios tienen los vinilos removibles?", "¿Cuáles son las aplicaciones típicas de los vinilos removibles?", "¿Por qué elegir vinilos removibles?", "¿Dónde son útiles los vinilos removibles?", "¿Qué son los vinilos removibles?", "Usos de los vinilos removibles", "Beneficios de los vinilos removibles", "Aplicaciones de vinilos removibles", "Características de los vinilos removibles"],
             "responses": ["Los vinilos removibles son fáciles de instalar y retirar sin dejar residuos.", "Son ideales para aplicaciones temporales, como eventos y promociones.", "Permiten cambios frecuentes sin dañar las superficies.", "Se utilizan en decoración de interiores, publicidad temporal y más.", "Ofrecen una buena adherencia mientras permiten una fácil remoción."]
         },
         {
             "tag": "interiores_vinilos",
-            "patterns": ["¿Qué vinilos son mejores para interiores?", "Usos de vinilos en interiores", "Beneficios de vinilos interiores", "Aplicaciones de vinilos interiores", "Características de vinilos para interiores"],
+            "patterns": ["¿Qué ventajas tienen los vinilos para interiores?", "¿Cómo se usan los vinilos en interiores?", "¿Cuáles son las aplicaciones comunes de los vinilos en interiores?", "¿Por qué optar por vinilos para decoración interior?", "¿Dónde son útiles los vinilos en entornos internos?", "¿Qué vinilos son mejores para interiores?", "Usos de vinilos en interiores", "Beneficios de vinilos interiores", "Aplicaciones de vinilos interiores", "Características de vinilos para interiores"],
             "responses": ["Los vinilos mates son ideales para evitar reflejos bajo iluminación artificial.", "Vinilos removibles son perfectos para eventos y promociones temporales.", "Tapices de vinilo y decoraciones murales añaden estilo a los espacios interiores.", "Se pueden usar en oficinas, tiendas, hogares y más.", "Ofrecen una gran variedad de diseños y acabados para adaptarse a cualquier decoración."]
         },
         {
             "tag": "exteriores_vinilos",
-            "patterns": ["¿Qué vinilos son mejores para exteriores?", "Usos de vinilos en exteriores", "Beneficios de vinilos exteriores", "Aplicaciones de vinilos exteriores", "Características de vinilos para exteriores"],
+            "patterns": ["¿Cuáles son las ventajas de los vinilos para exteriores?", "¿Cómo se usan los vinilos en exteriores?", "¿Cuáles son las aplicaciones comunes de los vinilos en exteriores?", "¿Por qué elegir vinilos para uso exterior?", "¿Dónde son útiles los vinilos en entornos al aire libre?", "¿Qué vinilos son mejores para exteriores?", "Usos de vinilos en exteriores", "Beneficios de vinilos exteriores", "Aplicaciones de vinilos exteriores", "Características de vinilos para exteriores"],
             "responses": ["Vinilos de alta durabilidad son esenciales para resistir las condiciones climáticas.", "Vinilos con protección UV evitan la decoloración por el sol.", "Son ideales para señalización, publicidad exterior y decoraciones de fachadas.", "Vinilos reflectantes aumentan la visibilidad en condiciones de poca luz.", "Ofrecen una excelente adherencia y resistencia al agua y viento."]
         },
         {
             "tag": "vehiculos_vinilos",
-            "patterns": ["¿Qué vinilos son mejores para vehículos?", "Usos de vinilos en vehículos", "Beneficios de vinilos para vehículos", "Aplicaciones de vinilos en vehículos", "Características de vinilos para vehículos"],
+            "patterns": ["¿En qué consiste la aplicación de vinilos en vehículos?", "¿Qué beneficios tienen los vinilos para automóviles?","¿Cómo se usan los vinilos en vehículos?", "¿Cuáles son las aplicaciones comunes de los vinilos en automóviles?", "¿Dónde son útiles los vinilos en vehículos?", "¿Qué vinilos son mejores para vehículos?", "Usos de vinilos en vehículos", "Beneficios de vinilos para vehículos", "Aplicaciones de vinilos en vehículos", "Características de vinilos para vehículos"],
             "responses": ["Vinilos flexibles y duraderos se adaptan a las curvas y superficies irregulares de los vehículos.", "Laminados de protección aumentan la vida útil de los gráficos en vehículos.", "Vinilos reflectantes mejoran la visibilidad nocturna para mayor seguridad.", "Son perfectos para publicidad móvil y branding de flotas comerciales.", "Ofrecen una alta resistencia a la intemperie y lavado frecuente."]
         },
         {
             "tag": "ventanas_vinilos",
-            "patterns": ["¿Qué vinilos son mejores para ventanas?", "Usos de vinilos en ventanas", "Beneficios de vinilos para ventanas", "Aplicaciones de vinilos en ventanas", "Características de vinilos para ventanas"],
+            "patterns": ["¿Cómo se usan los vinilos en ventanas?","¿Qué ventajas tienen los vinilos para ventanas?", "¿Cuáles son las aplicaciones típicas de los vinilos en ventanas?", "¿Por qué elegir vinilos para aplicaciones en ventanas?", "¿Dónde son útiles los vinilos en superficies de vidrio?", "¿Qué vinilos son mejores para ventanas?", "Usos de vinilos en ventanas", "Beneficios de vinilos para ventanas", "Aplicaciones de vinilos en ventanas", "Características de vinilos para ventanas"],
             "responses": ["Vinilos microperforados permiten visibilidad desde el interior mientras muestran gráficos en el exterior.", "Vinilos translúcidos crean efectos decorativos únicos y atractivos.", "Vinilos estáticos reutilizables son ideales para promociones cambiantes.", "Ofrecen privacidad y reducción del brillo solar.", "Son fáciles de instalar y remover sin dejar residuos."]
         },
         {
             "tag": "colores_vinilos",
-            "patterns": ["¿Qué colores de vinilos son recomendables?", "Mejores colores de vinilos", "Usos de colores en vinilos", "Beneficios de diferentes colores en vinilos", "Aplicaciones de vinilos según el color"],
+            "patterns": ["¿Qué opciones de color hay para los vinilos?", "Colores disponibles en vinilos", "Mejores colores para vinilos", "Variedad de colores en vinilos", "¿Puedo elegir el color de los vinilos?", "¿Qué colores de vinilos son recomendables?", "Mejores colores de vinilos", "Usos de colores en vinilos", "Beneficios de diferentes colores en vinilos", "Aplicaciones de vinilos según el color"],
             "responses": ["Colores vivos capturan la atención y son ideales para promociones y publicidad.", "Colores corporativos aseguran consistencia en branding y marketing.", "Colores reflectantes mejoran la visibilidad nocturna para seguridad y señalización.", "Colores mates evitan deslumbramiento en interiores.", "Variedad de colores disponibles para adaptarse a cualquier diseño y necesidad."]
         },
         {
             "tag": "tamaños_vinilos",
-            "patterns": ["¿Qué tamaños de vinilos están disponibles?", "Mejores tamaños de vinilos", "Usos de diferentes tamaños de vinilos", "Beneficios de diferentes tamaños de vinilos", "Aplicaciones de vinilos según el tamaño"],
+            "patterns": ["¿Qué tamaños de vinilos puedo elegir?", "Medidas disponibles para vinilos", "Tamaños estándar de vinilos", "¿Puedo personalizar el tamaño de los vinilos?", "Variedad de tamaños en vinilos","¿Qué tamaños de vinilos están disponibles?", "Mejores tamaños de vinilos", "Usos de diferentes tamaños de vinilos", "Beneficios de diferentes tamaños de vinilos", "Aplicaciones de vinilos según el tamaño"],
             "responses": ["Tamaños estándar y personalizados están disponibles para adaptarse a cualquier proyecto.", "Grandes formatos son ideales para carteles, murales y señalización exterior.", "Pequeños formatos se usan para etiquetas, señalización interna y decoración.", "Tamaños personalizados aseguran un ajuste perfecto para cualquier aplicación.", "Variedad de tamaños permite flexibilidad en diseño y implementación."]
         },
         {
             "tag": "tecnologias_impresion",
-            "patterns": ["¿Qué tecnologías de impresión se usan para vinilos?", "Mejores tecnologías de impresión para vinilos", "Usos de diferentes tecnologías de impresión en vinilos", "Beneficios de tecnologías de impresión para vinilos", "Aplicaciones de vinilos según la tecnología de impresión"],
+            "patterns": ["¿Qué tecnologías de impresión se usan para vinilos?", "Mejores tecnologías de impresión para vinilos", "Usos de diferentes tecnologías de impresión en vinilos", "Beneficios de tecnologías de impresión para vinilos", "Aplicaciones de vinilos según la tecnología de impresión", "¿Qué tecnologías de impresión se usan para vinilos?", "Mejores tecnologías de impresión para vinilos", "Usos de diferentes tecnologías de impresión en vinilos", "Beneficios de tecnologías de impresión para vinilos", "Aplicaciones de vinilos según la tecnología de impresión"],
             "responses": ["La impresión digital ofrece alta calidad y detalle, ideal para personalización en pequeñas cantidades.", "La impresión serigráfica es excelente para grandes tiradas y durabilidad.", "La impresión UV proporciona secado instantáneo y es ideal para aplicaciones exteriores.", "La impresión por sublimación ofrece colores vibrantes y duraderos.", "Cada tecnología tiene sus ventajas según el tipo de proyecto y requerimientos."]
         },
         {
             "tag": "preparacion_superficies",
-            "patterns": ["¿Cómo preparar superficies para aplicar vinilos?", "Preparación de superficies para vinilos", "Mejores prácticas para preparar superficies antes de aplicar vinilos", "Pasos para preparar superficies para vinilos", "Consejos para preparar superficies antes de aplicar vinilos"],
+            "patterns": ["¿Cómo preparar superficies para aplicar vinilos?", "Preparación de superficies para vinilos", "Mejores prácticas para preparar superficies antes de aplicar vinilos", "Pasos para preparar superficies para vinilos", "Consejos para preparar superficies antes de aplicar vinilos", "¿Cómo preparar superficies para aplicar vinilos?", "Preparación de superficies para vinilos", "Mejores prácticas para preparar superficies antes de aplicar vinilos", "Pasos para preparar superficies para vinilos", "Consejos para preparar superficies antes de aplicar vinilos"],
             "responses": ["Limpie la superficie a fondo para eliminar polvo, grasa y residuos.", "Asegúrese de que la superficie esté seca antes de la aplicación.", "Utilice alcohol isopropílico para una limpieza profunda.", "Superficies lisas y no porosas son ideales para la adhesión de vinilos.", "Evite aplicar vinilos en superficies rugosas o con texturas sin preparación adecuada."]
         },
         {
             "tag": "herramientas_aplicacion",
-            "patterns": ["¿Qué herramientas se necesitan para aplicar vinilos?", "Herramientas para aplicar vinilos", "Mejores herramientas para la aplicación de vinilos", "Equipamiento necesario para aplicar vinilos", "Consejos sobre herramientas para la aplicación de vinilos"],
+            "patterns": ["¿Qué herramientas se necesitan para aplicar vinilos?", "Herramientas para aplicar vinilos", "Mejores herramientas para la aplicación de vinilos", "Equipamiento necesario para aplicar vinilos", "Consejos sobre herramientas para la aplicación de vinilos", "¿Qué herramientas se necesitan para aplicar vinilos?", "Herramientas para aplicar vinilos", "Mejores herramientas para la aplicación de vinilos", "Equipamiento necesario para aplicar vinilos", "Consejos sobre herramientas para la aplicación de vinilos"],
             "responses": ["Espátulas de goma ayudan a eliminar burbujas y asegurar una aplicación uniforme.", "Rodillos de presión son útiles para aplicaciones grandes y curvas.", "Aplicadores de calor facilitan la adhesión en superficies curvas y texturizadas.", "Cintas de aplicación ayudan a posicionar vinilos de corte y gráficos complejos.", "Rociadores de agua con jabón facilitan la aplicación en método húmedo."]
         },
         {
             "tag": "tecnicas_instalacion",
-            "patterns": ["¿Cuáles son las técnicas para instalar vinilos?", "Técnicas de instalación de vinilos", "Mejores prácticas para instalar vinilos", "Pasos para instalar vinilos", "Consejos para la instalación de vinilos"],
+            "patterns": ["¿Cuáles son las técnicas para instalar vinilos?", "Técnicas de instalación de vinilos", "Mejores prácticas para instalar vinilos", "Pasos para instalar vinilos", "Consejos para la instalación de vinilos", "¿Cuáles son las técnicas para instalar vinilos?", "Técnicas de instalación de vinilos", "Mejores prácticas para instalar vinilos", "Pasos para instalar vinilos", "Consejos para la instalación de vinilos"],
             "responses": ["El método en seco es adecuado para superficies pequeñas y vinilos removibles.", "El método en húmedo permite reposicionar el vinilo durante la aplicación.", "Utilice una espátula para eliminar burbujas de aire durante la aplicación.", "Comience la aplicación desde el centro y avance hacia los bordes.", "Aplique calor para asegurar una adhesión firme en superficies curvas y texturizadas."]
         },
         {
             "tag": "cuidado_mantenimiento",
-            "patterns": ["¿Cómo cuidar y mantener los vinilos?", "Cuidado de vinilos", "Mejores prácticas para el mantenimiento de vinilos", "Consejos para cuidar vinilos", "Pasos para mantener vinilos en buen estado"],
+            "patterns": ["¿Cómo cuidar y mantener los vinilos?", "Cuidado de vinilos", "Mejores prácticas para el mantenimiento de vinilos", "Consejos para cuidar vinilos", "Pasos para mantener vinilos en buen estado", "¿Cómo cuidar y mantener los vinilos?", "Cuidado de vinilos", "Mejores prácticas para el mantenimiento de vinilos", "Consejos para cuidar vinilos", "Pasos para mantener vinilos en buen estado"],
             "responses": ["Limpie los vinilos regularmente con agua y jabón suave.", "Evite el uso de limpiadores abrasivos que puedan dañar el vinilo.", "Inspeccione los bordes periódicamente para asegurar que no se despeguen.", "Proteja los vinilos de la exposición prolongada a la luz solar intensa.", "Aplique una capa de laminado para mayor protección y durabilidad."]
         },
         {
             "tag": "casos_uso",
-            "patterns": ["¿Cuáles son los casos de uso para los vinilos?", "Usos comunes de los vinilos", "Ejemplos de uso de vinilos", "Aplicaciones prácticas de vinilos", "Casos de uso para diferentes tipos de vinilos"],
+            "patterns": ["¿Cuáles son los casos de uso para los vinilos?", "Usos comunes de los vinilos", "Ejemplos de uso de vinilos", "Aplicaciones prácticas de vinilos", "Casos de uso para diferentes tipos de vinilos", "¿Cuáles son los casos de uso para los vinilos?", "Usos comunes de los vinilos", "Ejemplos de uso de vinilos", "Aplicaciones prácticas de vinilos", "Casos de uso para diferentes tipos de vinilos"],
             "responses": ["Los vinilos se usan en branding corporativo y decoración de oficinas.", "Son ideales para la publicidad móvil en vehículos comerciales.", "Se utilizan en señalización interior y exterior para direcciones y seguridad.", "Decoraciones temporales para eventos y promociones son comunes.", "Gráficos de escaparates y vitrinas atraen la atención de los clientes."]
         },
         {
             "tag": "materiales_ecologicos",
-            "patterns": ["¿Qué materiales ecológicos se usan en vinilos?", "Vinilos ecológicos", "Beneficios de materiales ecológicos en vinilos", "Tipos de vinilos ecológicos", "Usos de vinilos ecológicos"],
+            "patterns": ["¿Qué materiales ecológicos se usan en vinilos?", "Vinilos ecológicos", "Beneficios de materiales ecológicos en vinilos", "Tipos de vinilos ecológicos", "Usos de vinilos ecológicos", "¿Qué materiales ecológicos se usan en vinilos?", "Vinilos ecológicos", "Beneficios de materiales ecológicos en vinilos", "Tipos de vinilos ecológicos", "Usos de vinilos ecológicos"],
             "responses": ["Existen vinilos libres de PVC que son más amigables con el medio ambiente.", "Tintas eco-friendly reducen el impacto ambiental.", "Materiales reciclables y reutilizables son cada vez más populares.", "Son ideales para empresas que buscan prácticas sostenibles.", "Vinilos ecológicos ofrecen las mismas ventajas con menor impacto ambiental."]
         }
     ]
