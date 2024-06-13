@@ -13,26 +13,13 @@ import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 import time
 
-#Configurar la barra lateral para que esté cerrada por defecto
-st.set_page_config(initial_sidebar_state='collapsed')
+# Configurar la barra lateral para que esté cerrada por defecto
+#st.set_page_config(initial_sidebar_state='collapsed')
 
 def load_css():
     with open("static/styles.css", "r") as f:
         css = f"<style>{f.read()}</style>"
-        st.markdown(css, unsafe_allow_html=True)
-
-# Función para incluir el script de JavaScript para mantener la aplicación activa
-def load_keep_alive_script():
-    keep_alive_script = """
-    <script>
-        function keepAlive() {
-            fetch('/')
-            setTimeout(keepAlive, 600000);  // 10 minutos en milisegundos
-        }
-        keepAlive();
-    </script>
-    """
-    st.markdown(keep_alive_script, unsafe_allow_html=True)        
+        st.markdown(css, unsafe_allow_html=True)       
 
 # Descargar los recursos de NLTK necesarios
 nltk.download('punkt')
@@ -124,33 +111,33 @@ def respond_to_user(user_input, intents):
     user_input_clean = remove_accents_and_symbols(user_input_lower)
 
     # Procesar la entrada del usuario como de costumbre
-    if "hola" in user_input_clean:
+    if re.search(r'\b' + re.escape("hola") + r'\b', user_input_clean):
         print("Detected salutation.")
         response = random.choice(respuestas_saludo)
         print(f"Response: {response}")
         return response, "saludo", 1.0
 
     # Buscar la palabra "no" como una palabra independiente
-    if "no" == user_input_clean.strip():
+    if re.search(r'\bno\b', user_input_clean):
         print("Detected negative response.")
         response = "Espero verte pronto."
         print(f"Response: {response}")
         return response, "respuesta_no", 1.0
 
-    # Buscar la palabra "si" como una palabra independiente
-    if "si" == user_input_clean.strip() or "sí" == user_input_clean.strip():
+    # Buscar la palabra "si" o "sí" como una palabra independiente
+    if re.search(r'\bsi\b', user_input_clean) or re.search(r'\bsí\b', user_input_clean):
         print("Detected affirmative response.")
         response = "¿En qué puedo ayudarte?"
         print(f"Response: {response}")
         return response, "respuesta_si", 1.0
 
     # Procesar palabras clave de estado emocional
-    if any(palabra in user_input_clean for palabra in palabras_bien):
+    if any(re.search(r'\b' + re.escape(palabra) + r'\b', user_input_clean) for palabra in palabras_bien):
         print("Positive emotional state keywords detected.")
         response = random.choice(respuestas_bien)
         print(f"Response: {response}")
         return response, "bien", 1.0
-    elif any(palabra in user_input_clean for palabra in palabras_mal):
+    elif any(re.search(r'\b' + re.escape(palabra) + r'\b', user_input_clean) for palabra in palabras_mal):
         print("Negative emotional state keywords detected.")
         response = random.choice(respuestas_mal)
         print(f"Response: {response}")
@@ -184,9 +171,7 @@ def display_text_word_by_word(text):
     time.sleep(0.1)
     message_placeholder.markdown(" ".join(words), unsafe_allow_html=True)
 
-
 load_css()
-load_keep_alive_script()  # Cargar el script para mantener la aplicación activa
 
 # Interfaz de Streamlit
 #st.title("IntelliGen Bot")
@@ -219,7 +204,7 @@ with st.sidebar:
     </style>
     '''
 
-        #st.title('Personalización Avatar')
+    #st.title('Personalización Avatar')
     st.markdown("<hr style='margin-top: 0px; margin-bottom: 0px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
     # Previsualización del avatar seleccionado
     avatar_placeholder = st.empty()
@@ -233,12 +218,12 @@ with st.sidebar:
 
     st.button('Limpiar historial de chat', on_click=clear_chat_history)
 
-    st.markdown("<hr style='margin-top: 0px; margin-bottom: 100px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 250px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
     
     # Agregar la imagen logo.png en la parte inferior de la barra lateral
     new_image_path = 'static/images/logo.png'  # Cambia esta ruta a la imagen que desees mostrar
     st.image(new_image_path, caption="", use_column_width=True,)
-    
+ 
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -266,7 +251,9 @@ if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
     with st.chat_message("assistant", avatar="static/images/chatbot.png"):
         display_text_word_by_word(response)
         st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
-    
+
+st.button('Limpiar historial de chat', on_click=clear_chat_history, key='clear_chat_history_button')
+
 # Botón para limpiar la conversación
 #st.button('Limpiar historial de chat', on_click=clear_chat_history, key="unique_button_key")
 # #st.experimental_rerun() 
