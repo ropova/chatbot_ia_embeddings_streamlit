@@ -10,8 +10,8 @@ import random
 import re
 import unicodedata
 import streamlit as st
-import time
 from sklearn.preprocessing import LabelEncoder
+import time
 
 # Configurar la barra lateral para que esté cerrada por defecto
 st.set_page_config(initial_sidebar_state='collapsed')
@@ -54,7 +54,7 @@ with open('data_mag.json', encoding='utf-8') as f:
 
 # Listas adicionales de respuestas y palabras
 palabras_bien = ["bien", "super", "lo maximo", "excelente", "bendecido", "genial", "fantastico", "maravilloso", "increible", "estupendo", "fenomenal"]
-palabras_mal = ["mal", "regular", "no me siento bien", "no estoy bien", "desanimado", "decaido", "apagado", "mas o menos", "triste", "abatido", "preocupado", "desalentado", "cansado", "agobiado"]
+palabras_mal = ["mal", "regular", "no me siento bien", "no estoy bien", "desanimado", "decaido", "apagado", "mas o menos", "bajo de nota", "triste", "abatido", "preocupado", "desalentado", "cansado", "agobiado"]
 
 respuestas_saludo = ["Hola, ¿cómo estás?", "¡Hola! ¿Cómo te va?", "Saludos, ¿cómo te encuentras?", "Hola, ¿cómo has estado?", "¿Qué tal estás hoy?", "¿Cómo te sientes?", "Hola, ¿cómo va todo?", "¿Cómo te encuentras?", "¿Cómo va tu día?", "Hola, ¿cómo te sientes hoy?", "¿Cómo andas?"]
 
@@ -102,6 +102,7 @@ def intent_detection(user_input):
     return response, score
 
 # Función para responder al usuario según la intención detectada
+
 def respond_to_user(user_input, intents):
     # Imprimir la entrada del usuario en la consola
     print(f"User input: {user_input}")
@@ -166,34 +167,93 @@ def display_text_word_by_word(text):
             message_placeholder.markdown(" ".join(words[:i]) + " " + word + " ▌", unsafe_allow_html=True)  # Mostrar el marcador en la última palabra
         time.sleep(random.uniform(0.08, 0.2))  # Generar una pausa aleatoria entre 0.2 y 0.5 segundos por palabra
 
-    # Eliminar el marcador al final
+    # Eliminar el marcador después de 1 segundo
+    time.sleep(0.1)
     message_placeholder.markdown(" ".join(words), unsafe_allow_html=True)
 
-def main():
-    load_css()
+load_css()
 
-    # Crear una barra lateral con un título
-    st.sidebar.title("Magnetica - Chatbot")
+# Interfaz de Streamlit
+#st.title("IntelliGen Bot")
 
-    # Crear un formulario para la entrada del usuario
-    with st.form(key='chat_form'):
-        user_input = st.text_input("Escribe tu mensaje aquí:", "")
-        submit_button = st.form_submit_button(label='Enviar')
+# Función para limpiar la conversación
+def clear_chat_history():
+    st.session_state.messages = [{"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"}]
+    st.session_state.chat_aborted = False
 
-    # Crear un contenedor para el chat
-    chat_container = st.container()
+# Opciones de avatares
+avatars = {
+    "Avatar 1": "static/images/gente.png",
+    "Avatar 2": "static/images/gente1.png",
+    "Avatar 3": "static/images/gente2.png",
+    "Avatar 4": "static/images/gente3.png",
+    "Avatar 5": "static/images/gente4.png",
+    "Avatar 6": "static/images/gente5.png",
+    "Avatar 7": "static/images/gente6.png"
+}    
 
-    if submit_button and user_input:
-        with chat_container:
-            user_input_clean = user_input.strip()
-            st.markdown(f"**Tú:** {user_input_clean}")
-            response, intent, score = respond_to_user(user_input_clean, intents)
-            display_text_word_by_word(response)
+with st.sidebar:
 
-    # Implementar un timer para mantener la sesión activa
-    while True:
-        st.empty()  # Mantener viva la sesión
-        time.sleep(60)  # Intervalo de 60 segundos
+    hide_img_fs = '''
+    <style>
+    button[title="View fullscreen"]{
+        visibility: hidden;}
+    hr {
+        border-top: 2px solid #404040;  /* Cambiar el color del divisor a blanco */
+    }
+    </style>
+    '''
 
-if __name__ == '__main__':
-    main()
+    #st.title('Personalización Avatar')
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 0px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    # Previsualización del avatar seleccionado
+    avatar_placeholder = st.empty()
+    selected_avatar = st.selectbox("Elige tu avatar", options=list(avatars.keys()), index=0)
+    st.session_state.user_avatar = avatars[selected_avatar]    
+    st.markdown("<hr style='margin-top: 10px; margin-bottom: 0px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    #avatar_placeholder.image(avatars[selected_avatar], caption="", use_column_width=True)
+    avatar_placeholder.image(avatars[selected_avatar], caption="", width=150)
+
+    st.markdown(hide_img_fs, unsafe_allow_html=True)
+
+    st.button('Limpiar historial de chat', on_click=clear_chat_history)
+
+    st.markdown("<hr style='margin-top: 0px; margin-bottom: 100px;'>", unsafe_allow_html=True)  # Divisor entre el botón y los demás elementos
+    
+    # Agregar la imagen logo.png en la parte inferior de la barra lateral
+    new_image_path = 'static/images/logo.png'  # Cambia esta ruta a la imagen que desees mostrar
+    st.image(new_image_path, caption="", use_column_width=True,)
+ 
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+if "estado" not in st.session_state:
+    st.session_state.estado = "inicial"
+
+for message in st.session_state.messages:
+    with st.chat_message(message["role"], avatar=message.get("image", None)):
+         st.markdown(message["content"], unsafe_allow_html=True)  # Asegurar que el contenido HTML se muestre correctamente
+
+if not st.session_state.messages:
+    with st.chat_message("assistant", avatar="static/images/chatbot.png"):
+        st.markdown("Hola, soy Magnétic Bot ¿cómo puedo ayudarte?")
+    st.session_state.messages.append({"role": "assistant", "content": "Hola, soy Magnétic Bot ¿cómo puedo ayudarte?", "image": "static/images/chatbot.png"})
+
+if prompt := st.chat_input("¿Cómo puedo ayudarte?"):
+    with st.chat_message("user", avatar=st.session_state.user_avatar):
+        st.markdown(prompt)
+    st.session_state.messages.append({"role": "user", "content": prompt, "image": st.session_state.user_avatar})     
+
+    with st.spinner(""):
+        response, intent, score = respond_to_user(prompt, intents)
+        st.session_state.spinner = False  # Desactivar el spinner una vez que se completa el procesamiento
+
+    with st.chat_message("assistant", avatar="static/images/chatbot.png"):
+        display_text_word_by_word(response)
+        st.session_state.messages.append({"role": "assistant", "content": response, "image": "static/images/chatbot.png"})
+
+st.button('Limpiar historial de chat', on_click=clear_chat_history, key='clear_chat_history_button')
+
+# Botón para limpiar la conversación
+#st.button('Limpiar historial de chat', on_click=clear_chat_history, key="unique_button_key")
+# #st.experimental_rerun() 
